@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=1]
 
-[ext_resource path="res://game/sling_shot.tscn" type="PackedScene" id=1]
-[ext_resource path="res://game/ground.tscn" type="PackedScene" id=2]
-[ext_resource path="res://game/template.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/block.png" type="Texture" id=4]
+[ext_resource path="res://game/building.gd" type="Script" id=1]
+[ext_resource path="res://game/sling_shot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/ground.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/block/block_preview.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -12,14 +12,17 @@ extents = Vector2( 50, 4000 )
 
 [node name="main" type="Node"]
 
-[node name="sling_shot" parent="." instance=ExtResource( 1 )]
+script/script = ExtResource( 1 )
+
+[node name="sling_shot" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 225.783, 493.982 )
 
-[node name="ground" parent="." instance=ExtResource( 2 )]
+[node name="ground" parent="." instance=ExtResource( 3 )]
 
 [node name="borders" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -54.1157, -3263.1 )
@@ -48,9 +51,22 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 1
 
-[node name="template" parent="." instance=ExtResource( 3 )]
+[node name="template" type="Position2D" parent="."]
 
-transform/pos = Vector2( 995.794, 601.285 )
-box_texture = ExtResource( 4 )
+transform/pos = Vector2( 844.193, 630.769 )
+
+[node name="block_selection" type="Node2D" parent="."]
+
+[node name="black_block" parent="block_selection" instance=ExtResource( 4 )]
+
+visibility/opacity = 1.0
+transform/pos = Vector2( 83.6571, 71.5663 )
+type = 1
+
+[node name="yellow_block" parent="block_selection" instance=ExtResource( 4 )]
+
+visibility/opacity = 1.0
+transform/pos = Vector2( 210.91, 71.5663 )
+type = 2
 
 

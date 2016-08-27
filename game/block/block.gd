@@ -1,13 +1,15 @@
 extends RigidBody2D
 
-var type
+export(int, "None", "Black", "Yellow") var type
 var sprite
 
 func _ready():
 	sprite = get_node("sprite")
-	set_type(global.BOX_TYPE_YELLOW)
+	set_type(type)
 
 func set_type(typ):
+	if sprite == null:
+		sprite = get_node("sprite")
 	type = typ
 	sprite.set_modulate(global.get_box_type_color(typ))
 

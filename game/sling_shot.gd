@@ -17,6 +17,8 @@ var wood
 var front_string
 var back_string
 
+var current_box_type = global.BOX_TYPE_YELLOW
+
 func _ready():
 	holder = get_node("holder")
 	wood = get_node("wood")
@@ -25,9 +27,15 @@ func _ready():
 	spawn_box()
 	set_process_input(true)
 
+func respawn_box():
+	if current_box != null:
+		current_box.queue_free()
+	spawn_box()
+
 func spawn_box():
 	time_launched = 0.0
 	current_box = box_scene.instance()
+	current_box.set_type(current_box_type)
 	#get_node("..").call_deferred("add_child", current_box)
 	holder.add_child(current_box)
 	current_box.set_scale(Vector2(1.0, 1.0) / get_scale())

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://game/block/block_preview.gd" type="Script" id=1]
+[ext_resource path="res://assets/block.png" type="Texture" id=2]
+
+[node name="block" type="Node2D"]
+
+visibility/opacity = 0.2
+script/script = ExtResource( 1 )
+type = null
+
+[node name="sprite" type="Sprite" parent="."]
+
+transform/scale = Vector2( 1.97949, 1.97949 )
+texture = ExtResource( 2 )
+
+

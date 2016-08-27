@@ -12,3 +12,5 @@ func get_box_type_color(type):
 	if type == BOX_TYPE_YELLOW:
 		return COLOR_YELLOW
 	assert(0)
+
+var template_to_load
