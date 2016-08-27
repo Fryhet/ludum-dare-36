@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://game/building.gd" type="Script" id=1]
 [ext_resource path="res://game/sling_shot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/ground.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/block/block_preview.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/theme.tres" type="Theme" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -57,6 +58,8 @@ transform/pos = Vector2( 844.193, 630.769 )
 
 [node name="block_selection" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="black_block" parent="block_selection" instance=ExtResource( 4 )]
 
 visibility/opacity = 1.0
@@ -68,5 +71,26 @@ type = 1
 visibility/opacity = 1.0
 transform/pos = Vector2( 210.91, 71.5663 )
 type = 2
+
+[node name="finished" type="Button" parent="."]
+
+anchor/left = 1
+anchor/right = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+theme/theme = ExtResource( 5 )
+margin/left = 200.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 100.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Finished"
+flat = false
+
+[connection signal="pressed" from="finished" to="." method="_on_finished_pressed"]
 
 
