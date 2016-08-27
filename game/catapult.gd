@@ -12,37 +12,44 @@ const MAX_LENGTH = 200.0
 const MAX_LENGTH_SQUARED = MAX_LENGTH * MAX_LENGTH
 
 var dragging = false
-var end
 var time_launched = 0.0
 
+var holder
 var current_box
-
-func is_launched():
-	return is_processing()
+var front_string
+var back_string
 
 func _ready():
-	set_process_input(true)
-	end = get_pos()
+	holder = get_node("holder")
+	front_string = get_node("wood/front/string")
+	back_string = get_node("wood/back/string")
 	spawn_box()
+	set_process_input(true)
 
 func spawn_box():
 	time_launched = 0.0
 	current_box = box_scene.instance()
-	get_node("..").call_deferred("add_child", current_box)
-	current_box.set_pos(get_pos())
+	#get_node("..").call_deferred("add_child", current_box)
+	holder.add_child(current_box)
+	current_box.set_scale(Vector2(1.0, 1.0) / get_scale())
+	current_box.set_pos(Vector2(0.0, 0.0))
 
 func _draw():
 	if !dragging:
 		return
 
-	var target = end - get_pos()
+	var pos = get_global_pos()
+	var scale = get_scale()
+	var target = holder.get_global_pos() - pos
 	var length = target.length()
 	if length > MAX_LENGTH:
 		target = target / length * MAX_LENGTH
 		length = MAX_LENGTH
 	var color = RED_COLOR.linear_interpolate(GREEN_COLOR, length / MAX_LENGTH)
 
-	draw_line(Vector2(0, 0), target / get_scale(), color, 2.0)
+	target /= scale
+	draw_line((front_string.get_global_pos() - pos) / scale, target, color, 2.0)
+	draw_line((back_string.get_global_pos() - pos) / scale, target, color, 2.0)
 
 func _process(delta):
 	time_launched += delta
@@ -60,7 +67,7 @@ func _input(event):
 		return
 
 	if event.type == InputEvent.MOUSE_MOTION:
-		end = event.global_pos
+		holder.set_global_pos(event.global_pos)
 		update()
 	elif event.type == InputEvent.MOUSE_BUTTON:
 		if event.button_index != BUTTON_LEFT:
@@ -75,7 +82,13 @@ func _input(event):
 			if length > MAX_LENGTH:
 				length = MAX_LENGTH
 			var dir = -diff.normalized()
+
+			holder.remove_child(current_box)
+			get_node("..").add_child(current_box)
+			current_box.set_global_pos(holder.get_global_pos())
+
 			current_box.launch(dir, MAX_SPEED * (length / MAX_LENGTH))
+			holder.set_pos(Vector2(0.0, 0.0))
 			set_process_input(false)
 			set_process(true)
 			update()

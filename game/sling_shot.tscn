@@ -11,20 +11,68 @@ transform/scale = Vector2( 2.34771, 2.34771 )
 script/script = ExtResource( 1 )
 box_scene = ExtResource( 2 )
 
-[node name="back" type="Sprite" parent="."]
+[node name="wood" type="Node2D" parent="."]
 
+transform/scale = Vector2( 1, 1 )
+
+[node name="back" type="Sprite" parent="wood"]
+
+editor/display_folded = true
 transform/pos = Vector2( 7.51469, 0 )
+transform/scale = Vector2( 1, 1 )
 z/z = -1
 texture = ExtResource( 3 )
 region = true
 region_rect = Rect2( 30, 100, 30, 60 )
 
-[node name="front" type="Sprite" parent="."]
+[node name="string" type="Position2D" parent="wood/back"]
 
-transform/pos = Vector2( 0.00914764, 18.0025 )
-z/z = 1
+transform/pos = Vector2( 1.62172, -8.79797 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="front" type="Sprite" parent="wood"]
+
+transform/pos = Vector2( 0.00914001, 18.0025 )
+transform/scale = Vector2( 1, 1 )
+z/z = 2
 texture = ExtResource( 3 )
 region = true
 region_rect = Rect2( 9, 5, 47, 86 )
+
+[node name="string" type="Position2D" parent="wood/front"]
+
+transform/pos = Vector2( -11.1759, -20.7095 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="holder" type="Node2D" parent="."]
+
+transform/pos = Vector2( -38.9669, 1.78947 )
+
+[node name="back" type="Sprite" parent="holder"]
+
+editor/display_folded = true
+transform/scale = Vector2( 1, 1 )
+z/z = -1
+texture = ExtResource( 3 )
+region = true
+region_rect = Rect2( 68, 5, 21, 21 )
+
+[node name="string" type="Position2D" parent="holder/back"]
+
+transform/pos = Vector2( 3.72225, 0.676773 )
+
+[node name="front" type="Sprite" parent="holder"]
+
+editor/display_folded = true
+transform/pos = Vector2( 0.0472336, 5.9644 )
+transform/scale = Vector2( 1, 1 )
+z/z = 1
+texture = ExtResource( 3 )
+region = true
+region_rect = Rect2( 69, 42, 21, 21 )
+
+[node name="string" type="Position2D" parent="holder/front"]
+
+transform/pos = Vector2( 3.72225, 0.676773 )
 
 
