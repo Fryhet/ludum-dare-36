@@ -84,14 +84,14 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 theme/theme = ExtResource( 6 )
-margin/left = 200.0
-margin/top = 0.0
-margin/right = 0.0
-margin/bottom = 100.0
+margin/left = 229.0
+margin/top = 67.0
+margin/right = 29.0
+margin/bottom = 167.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Finished"
+text = "Finish level"
 flat = false
 
 [connection signal="pressed" from="finished" to="." method="_on_finished_pressed"]

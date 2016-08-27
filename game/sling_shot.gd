@@ -3,7 +3,7 @@ extends Node2D
 export(PackedScene) var box_scene
 
 const MAX_SPEED = 1000.0
-const CLICK_RADIUS = 300.0
+const CLICK_RADIUS = 100.0
 const CLICK_RADIUS_SQUARED = CLICK_RADIUS * CLICK_RADIUS
 const MAX_LENGTH = 200.0
 const MAX_LENGTH_SQUARED = MAX_LENGTH * MAX_LENGTH
