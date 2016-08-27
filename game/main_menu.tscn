@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=3 format=1]
 
-[ext_resource path="res://game/main_menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/theme.tres" type="Theme" id=1]
+[ext_resource path="res://game/main_menu.gd" type="Script" id=2]
 
 [node name="main_menu" type="Container"]
 
@@ -10,11 +11,12 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+theme/theme = ExtResource( 1 )
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 0.0
 margin/bottom = 0.0
-script/script = ExtResource( 1 )
+script/script = ExtResource( 2 )
 
 [node name="play" type="Button" parent="."]
 
@@ -26,10 +28,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 170.0
-margin/top = 100.0
-margin/right = -170.0
-margin/bottom = -100.0
+margin/left = 100.0
+margin/top = 50.0
+margin/right = -100.0
+margin/bottom = -50.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
