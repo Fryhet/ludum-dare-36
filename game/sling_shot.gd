@@ -54,8 +54,8 @@ func _draw():
 		length = MAX_LENGTH
 
 	target /= scale
-	draw_line((front_string.get_global_pos() - pos) / scale, target, global.COLOR_BLACK, 2.0)
-	draw_line((back_string.get_global_pos() - pos) / scale, target, global.COLOR_BLACK, 2.0)
+	draw_line((front_string.get_global_pos() - pos) / scale, target, global.COLOR_GRAY, 2.0)
+	draw_line((back_string.get_global_pos() - pos) / scale, target, global.COLOR_GRAY, 2.0)
 
 func _process(delta):
 	time_launched += delta
