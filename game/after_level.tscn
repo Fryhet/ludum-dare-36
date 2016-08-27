@@ -1,0 +1,105 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://assets/theme.tres" type="Theme" id=1]
+[ext_resource path="res://game/after_level/after_level.gd" type="Script" id=2]
+
+[node name="after_level" type="Control"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+theme/theme = ExtResource( 1 )
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+script/script = ExtResource( 2 )
+
+[node name="score" type="Label" parent="."]
+
+anchor/top = 3
+anchor/right = 1
+anchor/bottom = 3
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 80.0
+margin/right = 0.0
+margin/bottom = 0.0
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="retry" type="Button" parent="."]
+
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 200.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = -100.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Retry"
+flat = false
+
+[node name="next_level" type="Button" parent="."]
+
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = -200.0
+margin/bottom = -100.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Next level"
+flat = false
+
+[node name="main_menu" type="Button" parent="."]
+
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 100.0
+margin/top = -160.0
+margin/right = -100.0
+margin/bottom = -260.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Main menu"
+flat = false
+
+[connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
+
+[connection signal="pressed" from="next_level" to="." method="_on_next_level_pressed"]
+
+[connection signal="pressed" from="main_menu" to="." method="_on_main_menu_pressed"]
+
+

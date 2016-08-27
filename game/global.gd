@@ -14,3 +14,4 @@ func get_box_type_color(type):
 	assert(0)
 
 var template_to_load
+var level_score
