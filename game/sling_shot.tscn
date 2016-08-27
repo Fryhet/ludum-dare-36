@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://game/catapult.gd" type="Script" id=1]
+[ext_resource path="res://game/box.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sling_shot.png" type="Texture" id=3]
+
+[node name="sling_shot" type="Position2D"]
+
+transform/pos = Vector2( 225.783, 419.955 )
+transform/scale = Vector2( 2.34771, 2.34771 )
+script/script = ExtResource( 1 )
+box_scene = ExtResource( 2 )
+
+[node name="back" type="Sprite" parent="."]
+
+transform/pos = Vector2( 7.51469, 0 )
+z/z = -1
+texture = ExtResource( 3 )
+region = true
+region_rect = Rect2( 30, 100, 30, 60 )
+
+[node name="front" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0.00914764, 18.0025 )
+z/z = 1
+texture = ExtResource( 3 )
+region = true
+region_rect = Rect2( 9, 5, 47, 86 )
+
+
