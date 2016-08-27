@@ -4,16 +4,12 @@
 [ext_resource path="res://game/catapult.gd" type="Script" id=2]
 [ext_resource path="res://game/box.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/ground.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/template.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 50, 400 )
-
-[sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
-extents = Vector2( 700, 50 )
+extents = Vector2( 50, 4000 )
 
 [node name="main" type="Node"]
 
@@ -31,14 +27,11 @@ box_scene = ExtResource( 3 )
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 1334.14, 362.639 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -54.1157, -3263.1 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 1 )
-shapes/1/transform = Matrix32( 1, 0, 0, 1, -54.1157, 362.639 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 1334.01, -3263.1 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 2 )
-shapes/2/transform = Matrix32( 1, 0, 0, 1, 640.432, -50.5853 )
-shapes/2/trigger = false
 collision/layers = 1
 collision/mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
@@ -48,23 +41,20 @@ bounce = 0.0
 
 [node name="right_shape" type="CollisionShape2D" parent="borders"]
 
-transform/pos = Vector2( 1334.14, 362.639 )
+transform/pos = Vector2( -54.1157, -3263.1 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
 [node name="left_shape" type="CollisionShape2D" parent="borders"]
 
-transform/pos = Vector2( -54.1157, 362.639 )
+transform/pos = Vector2( 1334.01, -3263.1 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 1
 
-[node name="top_shape" type="CollisionShape2D" parent="borders"]
+[node name="template" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 640.432, -50.5853 )
-shape = SubResource( 2 )
-trigger = false
-_update_shape_index = 2
+transform/pos = Vector2( 995.794, 601.285 )
 
 

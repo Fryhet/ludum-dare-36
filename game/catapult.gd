@@ -28,7 +28,8 @@ func _ready():
 func spawn_box():
 	time_launched = 0.0
 	current_box = box_scene.instance()
-	add_child(current_box)
+	get_node("..").call_deferred("add_child", current_box)
+	current_box.set_pos(get_pos())
 
 func _draw():
 	if !dragging:
@@ -70,8 +71,7 @@ func _input(event):
 			if length > MAX_LENGTH:
 				length = MAX_LENGTH
 			var dir = -diff.normalized()
-			current_box.apply_impulse(Vector2(0, 0), dir * MAX_SPEED * (length / MAX_LENGTH))
-			current_box.set_gravity_scale(1.0)
+			current_box.launch(dir, MAX_SPEED * (length / MAX_LENGTH))
 			set_process_input(false)
 			set_process(true)
 			update()
