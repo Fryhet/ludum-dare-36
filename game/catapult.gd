@@ -15,11 +15,13 @@ var time_launched = 0.0
 
 var holder
 var current_box
+var wood
 var front_string
 var back_string
 
 func _ready():
 	holder = get_node("holder")
+	wood = get_node("wood")
 	front_string = get_node("wood/front/string")
 	back_string = get_node("wood/back/string")
 	spawn_box()
@@ -34,9 +36,6 @@ func spawn_box():
 	current_box.set_pos(Vector2(0.0, 0.0))
 
 func _draw():
-	if !dragging:
-		return
-
 	var pos = get_global_pos()
 	var scale = get_scale()
 	var target = holder.get_global_pos() - pos
@@ -65,7 +64,15 @@ func _input(event):
 		return
 
 	if event.type == InputEvent.MOUSE_MOTION:
-		holder.set_global_pos(event.global_pos)
+		if !dragging:
+			return
+		var pos = wood.get_global_pos()
+		var diff = event.global_pos - pos
+		var length = diff.length()
+		if length > MAX_LENGTH:
+			diff = diff / length * MAX_LENGTH
+			length = MAX_LENGTH
+		holder.set_global_pos(pos + diff)
 		update()
 	elif event.type == InputEvent.MOUSE_BUTTON:
 		if event.button_index != BUTTON_LEFT:
