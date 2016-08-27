@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://game/box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/catapult.gd" type="Script" id=2]
+[ext_resource path="res://assets/box.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 1280, 50 )
+
+[node name="main" type="Node"]
+
+[node name="box" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 961.715, 368.807 )
+
+[node name="thrown_box" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 304.929, 311.001 )
+gravity_scale = 0.0
+script/script = ExtResource( 2 )
+
+[node name="ground" type="StaticBody2D" parent="."]
+
+transform/pos = Vector2( 521.747, 670.407 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Sprite" type="Sprite" parent="ground"]
+
+transform/pos = Vector2( 0.395874, -0.531561 )
+transform/scale = Vector2( 19.9117, 0.730705 )
+texture = ExtResource( 3 )
+
+
