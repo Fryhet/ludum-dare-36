@@ -19,20 +19,23 @@ var back_string
 
 var current_box_type = global.BOX_TYPE_YELLOW
 
+func is_launched():
+	return is_processing()
+
 func _ready():
 	holder = get_node("holder")
 	wood = get_node("wood")
 	front_string = get_node("wood/front/string")
 	back_string = get_node("wood/back/string")
-	spawn_box()
+	respawn_box()
 	set_process_input(true)
 
 func respawn_box():
+	if is_launched():
+		return # there's no way back!
 	if current_box != null:
 		current_box.queue_free()
-	spawn_box()
 
-func spawn_box():
 	time_launched = 0.0
 	current_box = box_scene.instance()
 	current_box.set_type(current_box_type)
@@ -57,12 +60,13 @@ func _draw():
 func _process(delta):
 	time_launched += delta
 	if time_launched > 1.0 && current_box.is_sleeping():
-		on_box_landed()
 		set_process(false)
 		set_process_input(true)
+		on_box_landed()
 
 func on_box_landed():
-	spawn_box()
+	current_box = null
+	respawn_box()
 
 func _input(event):
 	if event.type == InputEvent.KEY && event.is_action("ui_cancel"):
