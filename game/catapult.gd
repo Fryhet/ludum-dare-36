@@ -2,8 +2,7 @@ extends Node2D
 
 export(PackedScene) var box_scene
 
-const RED_COLOR = Color(1.0, 0.0, 0.0, 1.0)
-const GREEN_COLOR = Color(0.0, 1.0, 0.0, 1.0)
+const BLACK_COLOR = Color(0.0, 0.0, 0.0, 1.0)
 
 const MAX_SPEED = 1000.0
 const CLICK_RADIUS = 300.0
@@ -45,11 +44,10 @@ func _draw():
 	if length > MAX_LENGTH:
 		target = target / length * MAX_LENGTH
 		length = MAX_LENGTH
-	var color = RED_COLOR.linear_interpolate(GREEN_COLOR, length / MAX_LENGTH)
 
 	target /= scale
-	draw_line((front_string.get_global_pos() - pos) / scale, target, color, 2.0)
-	draw_line((back_string.get_global_pos() - pos) / scale, target, color, 2.0)
+	draw_line((front_string.get_global_pos() - pos) / scale, target, BLACK_COLOR, 2.0)
+	draw_line((back_string.get_global_pos() - pos) / scale, target, BLACK_COLOR, 2.0)
 
 func _process(delta):
 	time_launched += delta
