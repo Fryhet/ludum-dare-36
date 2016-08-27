@@ -1,14 +1,15 @@
 [gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://game/box.gd" type="Script" id=1]
+[ext_resource path="res://game/block.gd" type="Script" id=1]
 [ext_resource path="res://assets/block.png" type="Texture" id=2]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="box" type="RigidBody2D"]
+[node name="block" type="RigidBody2D"]
 
 input/pickable = true
 shapes/0/shape = SubResource( 1 )

@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://game/sling_shot.gd" type="Script" id=1]
-[ext_resource path="res://game/box.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/block.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/sling_shot.png" type="Texture" id=3]
+
 
 [node name="sling_shot" type="Position2D"]
 

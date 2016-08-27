@@ -1,13 +1,7 @@
-
+tool
 extends Node2D
 
-# member variables here, example:
-# var a=2
-# var b="textvar"
+export(Texture) var box_texture
 
-func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
-
-
+func _draw():
+	draw_texture(box_texture, Vector2(0, 0))
