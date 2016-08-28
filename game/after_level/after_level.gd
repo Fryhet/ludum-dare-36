@@ -25,11 +25,13 @@ func to_percent_string(score):
 	return "%.2f%%" % (score * 100.0)
 
 func _on_retry_pressed():
-	get_tree().change_scene("res://game/building.tscn")
+	global.start_game(global.template_to_load, global.game_mode)
 
 func _on_next_level_pressed():
-	global.template_to_load += 1
-	get_tree().change_scene("res://game/building.tscn")
+	global.start_game(global.template_to_load + 1, global.GAME_MODE_NORMAL)
+
+func _on_change_level_pressed():
+	get_tree().change_scene("res://game/level_select/level_select.tscn")
 
 func _on_main_menu_pressed():
 	get_tree().change_scene("res://game/main_menu.tscn")

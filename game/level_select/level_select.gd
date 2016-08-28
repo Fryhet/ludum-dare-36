@@ -12,8 +12,7 @@ func _ready():
 		button.connect("pressed", self, "_on_level_selected", [i])
 
 func _on_level_selected(index):
-	global.template_to_load = index
-	get_tree().change_scene("res://game/building.tscn")
+	global.start_game(index, global.GAME_MODE_SELECT)
 
 func _on_main_menu_pressed():
 	get_tree().change_scene("res://game/main_menu.tscn")

@@ -1,8 +1,7 @@
 extends Container
 
 func _on_play_pressed():
-	global.template_to_load = 0
-	get_tree().change_scene("res://game/building.tscn")
+	global.start_game(0, global.GAME_MODE_NORMAL)
 
 
 func _on_level_select_pressed():
