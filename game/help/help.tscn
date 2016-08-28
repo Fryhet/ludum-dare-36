@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://assets/theme.tres" type="Theme" id=1]
+[ext_resource path="res://game/help/help.gd" type="Script" id=2]
+
+[node name="help" type="Control"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+theme/theme = ExtResource( 1 )
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+script/script = ExtResource( 2 )
+
+[node name="text" type="RichTextLabel" parent="."]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 20.0
+margin/top = 110.0
+margin/right = 20.0
+margin/bottom = 140.0
+bbcode/enabled = true
+bbcode/bbcode = "You are the chosen one.\n\nThe mighty pharaoh has decided to build the biggest monuments the world has ever seen, and you will help him. You will become a huge part of history - using one of the best innovations in Egyptian technology, [color=#fad689]a giant slingshot[/color]!\n\nPharaoh has generously agreed to outline the shape he\'s going after using his personal holographic device - you need to match it as closely as possible.\n\nIf you don\'t, chances are the pharaoh will be angry... and trust me, you don\'t want him to be angry! Don\'t worry though, it could be worse. After all, you\'re not part of the group which will carve details into the stone manually... yet."
+visible_characters = -1
+
+[node name="main_menu" type="Button" parent="."]
+
+anchor/left = 3
+anchor/top = 1
+anchor/right = 3
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 100.0
+margin/top = 120.0
+margin/right = -100.0
+margin/bottom = 20.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Main menu"
+flat = false
+
+[connection signal="pressed" from="main_menu" to="." method="_on_main_menu_pressed"]
+
+

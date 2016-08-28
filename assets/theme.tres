@@ -21,14 +21,14 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=4]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
 texture = ExtResource( 1 )
-region_rect = Rect2( 0, 0, 32, 16 )
+region_rect = Rect2( 0, 16, 32, 16 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -57,14 +57,14 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=2]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
 texture = ExtResource( 1 )
-region_rect = Rect2( 0, 16, 32, 16 )
+region_rect = Rect2( 0, 0, 32, 16 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -85,7 +85,7 @@ Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 2
 Button/fonts/font = null
 Button/styles/disabled = SubResource( 1 )
-Button/styles/focus = SubResource( 2 )
+Button/styles/focus = SubResource( 4 )
 Button/styles/hover = SubResource( 3 )
 Button/styles/normal = SubResource( 2 )
 Button/styles/pressed = SubResource( 4 )

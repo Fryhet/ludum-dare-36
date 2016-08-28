@@ -1,0 +1,32 @@
+[gd_scene format=1]
+
+[node name="container" type="CenterContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 34.0
+margin/right = 1280.0
+margin/bottom = 720.0
+use_top_left = false
+
+[node name="button" type="Button" parent="."]
+
+rect/min_size = Vector2( 200, 100 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 540.0
+margin/top = 293.0
+margin/right = 740.0
+margin/bottom = 393.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Button"
+flat = false
+
+
