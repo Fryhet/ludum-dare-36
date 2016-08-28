@@ -4,8 +4,6 @@
 [ext_resource path="res://game/block/block.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/slingshot.png" type="Texture" id=3]
 
-
-
 [node name="slingshot" type="Position2D"]
 
 transform/pos = Vector2( 225.783, 419.955 )
@@ -45,6 +43,7 @@ transform/pos = Vector2( -11.1759, -20.7095 )
 [node name="back" type="Sprite" parent="holder"]
 
 editor/display_folded = true
+transform/pos = Vector2( -9.70099, 1.3681 )
 z/z = -1
 texture = ExtResource( 3 )
 region = true
@@ -57,7 +56,7 @@ transform/pos = Vector2( 3.72225, 0.676773 )
 [node name="front" type="Sprite" parent="holder"]
 
 editor/display_folded = true
-transform/pos = Vector2( 0.0472336, 5.9644 )
+transform/pos = Vector2( -9.65376, 7.3325 )
 z/z = 1
 texture = ExtResource( 3 )
 region = true
