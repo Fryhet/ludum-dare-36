@@ -7,27 +7,7 @@
 
 [node name="block" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 0, -32.9937 )
-type = 1
-
-[node name="block1" parent="." instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 66.3536, -32.9937 )
-type = 1
-
-[node name="block3" parent="." instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 34.7227, -98.6339 )
+transform/pos = Vector2( 0, -32.6241 )
 type = 2
-
-[node name="block4" parent="." instance=ExtResource( 2 )]
-
-transform/pos = Vector2( -32.5822, -98.6339 )
-type = 2
-
-[node name="block2" parent="." instance=ExtResource( 2 )]
-
-transform/pos = Vector2( -67.0671, -32.9937 )
-type = 1
 
 
