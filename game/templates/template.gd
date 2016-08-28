@@ -6,4 +6,4 @@ func check():
 	for child in children:
 		accum += child.get_points()
 	global.level_score = accum / children.size()
-	get_tree().change_scene("res://game/after_level.tscn")
+	get_tree().change_scene("res://game/after_level/after_level.tscn")

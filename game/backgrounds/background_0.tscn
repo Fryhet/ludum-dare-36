@@ -1,42 +1,53 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://assets/white_texture.png" type="Texture" id=1]
 [ext_resource path="res://assets/gradient.png" type="Texture" id=2]
-[ext_resource path="res://assets/background/sun.png" type="Texture" id=3]
-[ext_resource path="res://assets/background/dune_right.png" type="Texture" id=4]
-[ext_resource path="res://assets/background/dune_left.png" type="Texture" id=5]
+[ext_resource path="res://assets/background/stars.png" type="Texture" id=3]
+[ext_resource path="res://assets/background/sun.png" type="Texture" id=4]
+[ext_resource path="res://assets/background/dune_right.png" type="Texture" id=5]
+[ext_resource path="res://assets/background/dune_left.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
 
 resource/name = "background_0"
-length = 20.0
+length = 40.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("dune/sun:transform/rot")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 20 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, -360.0 ] }
+tracks/0/keys = { "times":FloatArray( 0, 40 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, -360.0 ] }
 tracks/1/type = "value"
 tracks/1/path = NodePath("dune/left:modulate")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0, 3, 8, 11, 15.3, 20 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.282353, 0.121569, 0.0352941, 1 ), Color( 1, 0.717647, 0.298039, 1 ), Color( 0.611765, 0.254902, 0.0627451, 1 ), Color( 0.282353, 0.121569, 0.0352941, 1 ), Color( 0.160156, 0.0701776, 0.0218964, 1 ), Color( 0.282353, 0.121569, 0.0352941, 1 ) ] }
+tracks/1/keys = { "times":FloatArray( 0, 6, 16, 22, 30.6, 40 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.282353, 0.121569, 0.0352941, 1 ), Color( 1, 0.717647, 0.298039, 1 ), Color( 0.611765, 0.254902, 0.0627451, 1 ), Color( 0.282353, 0.121569, 0.0352941, 1 ), Color( 0.160156, 0.0701776, 0.0218964, 1 ), Color( 0.282353, 0.121569, 0.0352941, 1 ) ] }
 tracks/2/type = "value"
 tracks/2/path = NodePath("dune/right:modulate")
 tracks/2/interp = 1
 tracks/2/imported = false
-tracks/2/keys = { "times":FloatArray( 0, 3, 8, 11, 15.3, 20 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.285156, 0.123698, 0.0367584, 1 ), Color( 0.611765, 0.254902, 0.0627451, 1 ), Color( 1, 0.717647, 0.298039, 1 ), Color( 0.282353, 0.121569, 0.0352941, 1 ), Color( 0.156863, 0.0666667, 0.0196078, 1 ), Color( 0.282353, 0.121569, 0.0352941, 1 ) ] }
+tracks/2/keys = { "times":FloatArray( 0, 6, 16, 22, 30.6, 40 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.285156, 0.123698, 0.0367584, 1 ), Color( 0.611765, 0.254902, 0.0627451, 1 ), Color( 1, 0.717647, 0.298039, 1 ), Color( 0.282353, 0.121569, 0.0352941, 1 ), Color( 0.156863, 0.0666667, 0.0196078, 1 ), Color( 0.282353, 0.121569, 0.0352941, 1 ) ] }
 tracks/3/type = "value"
 tracks/3/path = NodePath("sky:modulate")
 tracks/3/interp = 1
 tracks/3/imported = false
-tracks/3/keys = { "times":FloatArray( 0, 2.6, 5.1, 7.4, 10, 11, 15.3, 19 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 1, 0.552856, 0.226562, 1 ), Color( 0.716614, 0.763261, 0.777344, 1 ), Color( 0.63446, 0.839559, 0.902344, 1 ), Color( 0.713726, 0.760784, 0.776471, 1 ), Color( 1, 0.54902, 0.223529, 1 ), Color( 0.283051, 0.294961, 0.414062, 1 ), Color( 0.230225, 0.241323, 0.359375, 1 ), Color( 0.282353, 0.294118, 0.411765, 1 ) ] }
+tracks/3/keys = { "times":FloatArray( 0, 5.2, 10.2, 14.8, 20, 22, 30.6, 38 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 1, 0.552856, 0.226562, 1 ), Color( 0.716614, 0.763261, 0.777344, 1 ), Color( 0.63446, 0.839559, 0.902344, 1 ), Color( 0.713726, 0.760784, 0.776471, 1 ), Color( 1, 0.54902, 0.223529, 1 ), Color( 0.283051, 0.294961, 0.414062, 1 ), Color( 0.230225, 0.241323, 0.359375, 1 ), Color( 0.282353, 0.294118, 0.411765, 1 ) ] }
 tracks/4/type = "value"
 tracks/4/path = NodePath("sky/gradient:modulate")
 tracks/4/interp = 1
 tracks/4/imported = false
-tracks/4/keys = { "times":FloatArray( 0, 3, 4.9, 7, 10 ), "transitions":FloatArray( 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 0, 0, 0, 1 ), Color( 0.921569, 0.921569, 0.921569, 1 ), Color( 1, 1, 1, 1 ), Color( 0.921875, 0.921875, 0.921875, 1 ), Color( 0, 0, 0, 1 ) ] }
+tracks/4/keys = { "times":FloatArray( 0, 6, 9.8, 14, 20 ), "transitions":FloatArray( 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 0, 0, 0, 1 ), Color( 0.921569, 0.921569, 0.921569, 1 ), Color( 1, 1, 1, 1 ), Color( 0.921875, 0.921875, 0.921875, 1 ), Color( 0, 0, 0, 1 ) ] }
+tracks/5/type = "value"
+tracks/5/path = NodePath("sky/stars:visibility/opacity")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = { "times":FloatArray( 0, 24, 30.6, 36.1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0, 0.0 ] }
+tracks/6/type = "value"
+tracks/6/path = NodePath("modulate:color")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = { "times":FloatArray( 0, 10, 19.7, 30.6 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ Color( 1, 0.84256, 0.738281, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0.839216, 0.737255, 1 ), Color( 0.566406, 0.599574, 1, 1 ) ] }
 
 [node name="background" type="Node2D"]
 
@@ -47,7 +58,7 @@ z/z = -2
 transform/pos = Vector2( 667.196, 433.774 )
 transform/scale = Vector2( 1275.17, 903.402 )
 texture = ExtResource( 1 )
-modulate = Color( 1, 0.552856, 0.226562, 1 )
+modulate = Color( 0.239439, 0.250678, 0.368913, 1 )
 
 [node name="gradient" type="Sprite" parent="sky"]
 
@@ -57,6 +68,13 @@ transform/scale = Vector2( 0.767846, 0.0364958 )
 texture = ExtResource( 2 )
 modulate = Color( 0, 0, 0, 1 )
 
+[node name="stars" type="Sprite" parent="sky"]
+
+visibility/opacity = 0.772727
+transform/pos = Vector2( -0.01498, -0.282061 )
+transform/scale = Vector2( 0.00129195, 0.00129195 )
+texture = ExtResource( 3 )
+
 [node name="dune" type="Node2D" parent="."]
 
 transform/pos = Vector2( 803.297, 517.647 )
@@ -65,20 +83,20 @@ transform/scale = Vector2( 1.24249, 1.24249 )
 [node name="sun" type="Sprite" parent="dune"]
 
 transform/pos = Vector2( -30.6566, 208.026 )
+transform/rot = -261.9
 transform/scale = Vector2( 0.804835, 0.804835 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( -700, 0 )
 
 [node name="right" type="Sprite" parent="dune"]
 
-texture = ExtResource( 4 )
-modulate = Color( 0.285156, 0.123698, 0.0367584, 1 )
+texture = ExtResource( 5 )
+modulate = Color( 0.178751, 0.0762427, 0.0223438, 1 )
 
 [node name="left" type="Sprite" parent="dune"]
 
-transform/scale = Vector2( 1, 1 )
-texture = ExtResource( 5 )
-modulate = Color( 0.282353, 0.121569, 0.0352941, 1 )
+texture = ExtResource( 6 )
+modulate = Color( 0.181469, 0.0791412, 0.0242332, 1 )
 
 [node name="animation_player" type="AnimationPlayer" parent="."]
 
@@ -90,5 +108,9 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "background_0"
+
+[node name="modulate" type="CanvasModulate" parent="."]
+
+color = Color( 0.626075, 0.632553, 0.963842, 1 )
 
 
