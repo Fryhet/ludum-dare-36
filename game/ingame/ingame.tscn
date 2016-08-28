@@ -43,6 +43,8 @@ transform/pos = Vector2( 225.783, 493.982 )
 
 [node name="ground" parent="." instance=ExtResource( 3 )]
 
+editor/display_folded = true
+
 [node name="borders" type="StaticBody2D" parent="."]
 
 editor/display_folded = true
