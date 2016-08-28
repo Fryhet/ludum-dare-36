@@ -34,9 +34,9 @@ func _input_event(viewport, event, shape_idx):
 	on_click()
 
 func on_click():
-	var sling_shot = get_node("/root/main/sling_shot")
-	sling_shot.current_box_type = type
-	sling_shot.respawn_box()
+	var slingshot = get_node("/root/main/slingshot")
+	slingshot.current_box_type = type
+	slingshot.respawn_box()
 
 func get_points():
 	var points = 0.0

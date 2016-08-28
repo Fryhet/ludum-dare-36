@@ -2,7 +2,7 @@
 
 [ext_resource path="res://game/building.gd" type="Script" id=1]
 [ext_resource path="res://game/backgrounds/background_0.tscn" type="PackedScene" id=2]
-[ext_resource path="res://game/sling_shot.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/slingshot.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/ground.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/block/block_preview.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/theme.tres" type="Theme" id=6]
@@ -18,7 +18,7 @@ script/script = ExtResource( 1 )
 
 [node name="background" parent="." instance=ExtResource( 2 )]
 
-[node name="sling_shot" parent="." instance=ExtResource( 3 )]
+[node name="slingshot" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 225.783, 493.982 )
 

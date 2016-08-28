@@ -17,7 +17,7 @@ var wood
 var front_string
 var back_string
 
-var current_box_type = global.BOX_TYPE_YELLOW
+var current_box_type = global.BOX_TYPE_SAND
 
 func is_launched():
 	return is_processing()
