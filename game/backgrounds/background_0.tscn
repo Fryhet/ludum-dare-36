@@ -39,6 +39,16 @@ tracks/4/path = NodePath("earth_center:transform/rot")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = { "times":FloatArray( 0, 40 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, -360.0 ] }
+tracks/5/type = "value"
+tracks/5/path = NodePath("dune/left:modulate")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = { "times":FloatArray( 0, 6, 16, 22, 30.6, 40 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.282353, 0.121569, 0.0352941, 1 ), Color( 1, 0.717647, 0.298039, 1 ), Color( 0.611765, 0.254902, 0.0627451, 1 ), Color( 0.282353, 0.121569, 0.0352941, 1 ), Color( 0.160156, 0.0701776, 0.0218964, 1 ), Color( 0.282353, 0.121569, 0.0352941, 1 ) ] }
+tracks/6/type = "value"
+tracks/6/path = NodePath("dune/right:modulate")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = { "times":FloatArray( 0, 6, 16, 22, 30.6, 40 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.285156, 0.123698, 0.0367584, 1 ), Color( 0.611765, 0.254902, 0.0627451, 1 ), Color( 1, 0.717647, 0.298039, 1 ), Color( 0.282353, 0.121569, 0.0352941, 1 ), Color( 0.156863, 0.0666667, 0.0196078, 1 ), Color( 0.282353, 0.121569, 0.0352941, 1 ) ] }
 
 [node name="background" type="Node2D"]
 
