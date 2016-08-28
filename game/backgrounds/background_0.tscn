@@ -58,7 +58,7 @@ z/z = -2
 transform/pos = Vector2( 667.196, 433.774 )
 transform/scale = Vector2( 1275.17, 903.402 )
 texture = ExtResource( 1 )
-modulate = Color( 0.239439, 0.250678, 0.368913, 1 )
+modulate = Color( 0.825609, 0.682336, 0.565505, 1 )
 
 [node name="gradient" type="Sprite" parent="sky"]
 
@@ -66,11 +66,11 @@ visibility/opacity = 0.5
 transform/pos = Vector2( 0.00388464, -0.0625015 )
 transform/scale = Vector2( 0.767846, 0.0364958 )
 texture = ExtResource( 2 )
-modulate = Color( 0, 0, 0, 1 )
+modulate = Color( 0.491503, 0.491503, 0.491503, 1 )
 
 [node name="stars" type="Sprite" parent="sky"]
 
-visibility/opacity = 0.772727
+visibility/opacity = 0.0
 transform/pos = Vector2( -0.01498, -0.282061 )
 transform/scale = Vector2( 0.00129195, 0.00129195 )
 texture = ExtResource( 3 )
@@ -83,7 +83,7 @@ transform/scale = Vector2( 1.24249, 1.24249 )
 [node name="sun" type="Sprite" parent="dune"]
 
 transform/pos = Vector2( -30.6566, 208.026 )
-transform/rot = -261.9
+transform/rot = -28.8
 transform/scale = Vector2( 0.804835, 0.804835 )
 texture = ExtResource( 4 )
 offset = Vector2( -700, 0 )
@@ -91,12 +91,12 @@ offset = Vector2( -700, 0 )
 [node name="right" type="Sprite" parent="dune"]
 
 texture = ExtResource( 5 )
-modulate = Color( 0.178751, 0.0762427, 0.0223438, 1 )
+modulate = Color( 0.459347, 0.193673, 0.050618, 1 )
 
 [node name="left" type="Sprite" parent="dune"]
 
 texture = ExtResource( 6 )
-modulate = Color( 0.181469, 0.0791412, 0.0242332, 1 )
+modulate = Color( 0.665098, 0.439477, 0.175425, 1 )
 
 [node name="animation_player" type="AnimationPlayer" parent="."]
 
@@ -111,6 +111,6 @@ autoplay = "background_0"
 
 [node name="modulate" type="CanvasModulate" parent="."]
 
-color = Color( 0.626075, 0.632553, 0.963842, 1 )
+color = Color( 1, 0.892941, 0.822031, 1 )
 
 

@@ -8,6 +8,9 @@ var pressed = false
 
 func _ready():
 	sprite = get_node("sprite")
+	var rect = sprite.get_region_rect()
+	rect.pos.x = (randi() % (sprite.get_texture().get_width() / int(rect.size.x))) * rect.size.x
+	sprite.set_region_rect(rect)
 	shape = get_node("shape")
 	set_type(type)
 	set_process_input(true)

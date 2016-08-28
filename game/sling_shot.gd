@@ -48,6 +48,7 @@ func respawn_box():
 	holder.add_child(current_box)
 	current_box.set_scale(Vector2(1.0, 1.0) / get_scale())
 	current_box.set_pos(Vector2(0.0, 0.0))
+	current_box.set_rotd(90 * (randi() % 4))
 
 func _draw():
 	var pos = get_global_pos()

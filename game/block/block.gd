@@ -5,6 +5,9 @@ var sprite
 
 func _ready():
 	sprite = get_node("sprite")
+	var rect = sprite.get_region_rect()
+	rect.pos.x = (randi() % (sprite.get_texture().get_width() / int(rect.size.x))) * rect.size.x
+	sprite.set_region_rect(rect)
 	set_type(type)
 
 func set_type(typ):

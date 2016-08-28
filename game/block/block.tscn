@@ -39,6 +39,8 @@ type = 2
 transform/pos = Vector2( -0.0639243, -0.0639281 )
 transform/scale = Vector2( 1.97949, 1.97949 )
 texture = ExtResource( 2 )
+region = true
+region_rect = Rect2( 0, 0, 32, 32 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
 

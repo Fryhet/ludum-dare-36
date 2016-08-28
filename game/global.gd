@@ -15,6 +15,9 @@ var template_to_load
 var level_score
 var game_mode
 
+func _ready():
+	randomize()
+
 func start_game(level, mode):
 	template_to_load = level
 	game_mode = mode
