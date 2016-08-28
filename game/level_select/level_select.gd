@@ -2,7 +2,12 @@ extends Control
 
 export(PackedScene) var menu_entry
 
+func _input(event):
+	if event.type == InputEvent.KEY && event.is_action("ui_cancel") && !event.is_pressed():
+		_on_main_menu_pressed()
+
 func _ready():
+	set_process_input(true)
 	var container = get_node("container")
 	for i in range(0, global.TEMPLATE_COUNT):
 		var entry = menu_entry.instance()

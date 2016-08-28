@@ -1,6 +1,6 @@
 extends Area2D
 
-export(int, "None", "Gray", "Sand") var type
+export(int, "None", "Gray", "Sand", "Destroyer") var type
 var sprite
 var shape
 

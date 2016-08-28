@@ -82,19 +82,23 @@ transform/pos = Vector2( 844.193, 630.769 )
 
 [node name="block_selection" type="Node2D" parent="."]
 
-editor/display_folded = true
-
-[node name="black_block" parent="block_selection" instance=ExtResource( 4 )]
+[node name="gray_block" parent="block_selection" instance=ExtResource( 4 )]
 
 visibility/opacity = 1.0
 transform/pos = Vector2( 83.6571, 71.5663 )
 type = 1
 
-[node name="yellow_block" parent="block_selection" instance=ExtResource( 4 )]
+[node name="sand_block" parent="block_selection" instance=ExtResource( 4 )]
 
 visibility/opacity = 1.0
-transform/pos = Vector2( 210.91, 71.5663 )
+transform/pos = Vector2( 202.949, 71.5663 )
 type = 2
+
+[node name="destroyer_block" parent="block_selection" instance=ExtResource( 4 )]
+
+visibility/opacity = 1.0
+transform/pos = Vector2( 322.364, 71.5663 )
+type = 3
 
 [node name="block_counter" type="Container" parent="."]
 

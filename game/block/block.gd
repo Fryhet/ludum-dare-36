@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-export(int, "None", "Gray", "Sand") var type
+export(int, "None", "Gray", "Sand", "Destroyer") var type
 var sprite
 
 func _ready():
@@ -15,11 +15,25 @@ func set_type(typ):
 		sprite = get_node("sprite")
 	type = typ
 	sprite.set_modulate(global.get_box_type_color(typ))
+	disconnect_rigidbody()
 	if type == global.BOX_TYPE_GRAY:
 		set_weight(20.0)
 	elif type == global.BOX_TYPE_SAND:
 		set_weight(10.0)
 		set_friction(0.8)
+	elif type == global.BOX_TYPE_DESTROYER:
+		connect_rigidbody()
+
+func connect_rigidbody():
+	set_contact_monitor(true)
+	set_max_contacts_reported(5)
+	connect("body_enter", self, "on_body_enter")
+
+func disconnect_rigidbody():
+	set_contact_monitor(false)
+	set_max_contacts_reported(0)
+	if is_connected("body_enter", self, "on_body_enter"):
+		disconnect("body_enter", self, "on_body_enter")
 
 func get_texture():
 	return sprite.get_texture()
@@ -29,3 +43,11 @@ func launch(dir, speed):
 	apply_impulse(Vector2(0, 0), dir * speed)
 	set_layer_mask_bit(0, true)
 	set_collision_mask_bit(0, true)
+
+func on_body_enter(body):
+	if body.is_in_group("block") && get_linear_velocity().length_squared() > global.DESTROYER_LETHAL_VELOCITY_SQUARED:
+		body.queue_free()
+
+func on_landed():
+	if type == global.BOX_TYPE_DESTROYER:
+		queue_free()

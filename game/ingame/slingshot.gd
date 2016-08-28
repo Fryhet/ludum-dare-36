@@ -75,6 +75,7 @@ func _process(delta):
 		on_box_landed()
 
 func on_box_landed():
+	current_box.on_landed()
 	current_box = null
 	if block_counter.used >= block_counter.max_used:
 		on_all_blocks_used()
