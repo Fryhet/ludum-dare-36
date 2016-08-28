@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://assets/theme.tres" type="Theme" id=1]
+[ext_resource path="res://game/level_select/level_select.gd" type="Script" id=2]
+[ext_resource path="res://game/level_select/level_select_entry.tscn" type="PackedScene" id=3]
+
+[node name="level_select" type="Control"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 2
+theme/theme = ExtResource( 1 )
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+script/script = ExtResource( 2 )
+menu_entry = ExtResource( 3 )
+
+[node name="container" type="GridContainer" parent="."]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 120.0
+columns = 4
+
+[node name="main_menu" type="Button" parent="."]
+
+anchor/left = 3
+anchor/top = 1
+anchor/right = 3
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 100.0
+margin/top = 120.0
+margin/right = -100.0
+margin/bottom = 20.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Main menu"
+flat = false
+
+[connection signal="pressed" from="main_menu" to="." method="_on_main_menu_pressed"]
+
+

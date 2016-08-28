@@ -29,15 +29,37 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 100.0
-margin/top = 50.0
+margin/top = 110.0
 margin/right = -100.0
-margin/bottom = -50.0
+margin/bottom = 10.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "Play"
 flat = false
 
+[node name="level_select" type="Button" parent="."]
+
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 100.0
+margin/top = -10.0
+margin/right = -100.0
+margin/bottom = -110.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Select level"
+flat = false
+
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+
+[connection signal="pressed" from="level_select" to="." method="_on_level_select_pressed"]
 
 
