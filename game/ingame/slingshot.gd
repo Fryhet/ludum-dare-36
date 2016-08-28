@@ -2,7 +2,7 @@ extends Node2D
 
 export(PackedScene) var box_scene
 
-const MAX_SPEED = 1000.0
+const MAX_SPEED = 100.0
 const CLICK_RADIUS = 100.0
 const CLICK_RADIUS_SQUARED = CLICK_RADIUS * CLICK_RADIUS
 const MAX_LENGTH = 200.0
@@ -83,10 +83,6 @@ func on_all_blocks_used():
 	get_node("../restart").show()
 
 func _input(event):
-	if event.type == InputEvent.KEY && event.is_action("ui_cancel"):
-		get_tree().change_scene("res://game/main_menu/main_menu.tscn")
-		return
-
 	if event.type == InputEvent.MOUSE_MOTION:
 		if !dragging:
 			return
@@ -116,7 +112,7 @@ func _input(event):
 			get_node("..").add_child(current_box)
 			current_box.set_global_pos(holder.get_global_pos())
 
-			current_box.launch(dir, MAX_SPEED * (length / MAX_LENGTH))
+			current_box.launch(dir, MAX_SPEED * (length / MAX_LENGTH) * current_box.get_weight())
 			holder.set_pos(Vector2(0.0, 0.0))
 			set_launched(true)
 			update()

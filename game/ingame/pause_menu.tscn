@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://assets/theme.tres" type="Theme" id=1]
+[ext_resource path="res://game/ingame/pause_menu.gd" type="Script" id=2]
+[ext_resource path="res://game/shared/menu_button.tscn" type="PackedScene" id=3]
+
+[node name="pause_menu" type="Control"]
+
+process/pause_mode = 2
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+theme/theme = ExtResource( 1 )
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+script/script = ExtResource( 2 )
+
+[node name="container" type="GridContainer" parent="."]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 150.0
+margin/right = 0.0
+margin/bottom = 150.0
+columns = 1
+
+[node name="resume" parent="container" instance=ExtResource( 3 )]
+
+margin/top = 0.0
+margin/bottom = 137.0
+
+[node name="button" parent="container/resume"]
+
+visibility/opacity = 0.0
+margin/top = 18.0
+margin/bottom = 118.0
+disabled = true
+text = "Resume"
+
+[node name="restart" parent="container" instance=ExtResource( 3 )]
+
+margin/top = 141.0
+margin/bottom = 278.0
+
+[node name="button" parent="container/restart"]
+
+visibility/opacity = 0.0
+margin/top = 18.0
+margin/bottom = 118.0
+disabled = true
+text = "Restart"
+
+[node name="main_menu" parent="container" instance=ExtResource( 3 )]
+
+margin/top = 282.0
+margin/bottom = 419.0
+
+[node name="button" parent="container/main_menu"]
+
+visibility/opacity = 0.0
+margin/top = 18.0
+margin/bottom = 118.0
+disabled = true
+text = "Main menu"
+
+[connection signal="pressed" from="container/resume/button" to="." method="set_menu_visible" binds= [ false ]]
+
+[connection signal="pressed" from="container/restart/button" to="." method="_on_restart_pressed"]
+
+[connection signal="pressed" from="container/main_menu/button" to="." method="_on_main_menu_pressed"]
+
+
+[editable path="container/resume"]
+[editable path="container/restart"]
+[editable path="container/main_menu"]

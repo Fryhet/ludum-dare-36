@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/theme.tres" type="Theme" id=1]
 [ext_resource path="res://game/main_menu/main_menu.gd" type="Script" id=2]
-[ext_resource path="res://game/main_menu/main_menu_button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/shared/menu_button.tscn" type="PackedScene" id=3]
 
 [node name="main_menu" type="GridContainer"]
 

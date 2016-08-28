@@ -15,6 +15,11 @@ func set_type(typ):
 		sprite = get_node("sprite")
 	type = typ
 	sprite.set_modulate(global.get_box_type_color(typ))
+	if type == global.BOX_TYPE_GRAY:
+		set_weight(20.0)
+	elif type == global.BOX_TYPE_SAND:
+		set_weight(10.0)
+		set_friction(0.8)
 
 func get_texture():
 	return sprite.get_texture()
