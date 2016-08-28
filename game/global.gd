@@ -12,7 +12,9 @@ const GAME_MODE_NORMAL = 1
 const GAME_MODE_SELECT = 2
 
 var template_to_load
-var level_score
+var shape_precision
+var blocks_used
+var max_blocks_used
 var game_mode
 
 func _ready():

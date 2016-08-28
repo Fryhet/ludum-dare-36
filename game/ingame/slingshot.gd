@@ -23,6 +23,8 @@ func is_launched():
 	return is_processing()
 
 func set_launched(launched):
+	if launched:
+		get_node("../block_counter").increment_used()
 	get_node("../finished").set_disabled(launched)
 	set_process_input(!launched)
 	set_process(launched)

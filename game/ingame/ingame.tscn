@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://game/ingame/ingame.gd" type="Script" id=1]
 [ext_resource path="res://game/backgrounds/background_0.tscn" type="PackedScene" id=2]
@@ -6,8 +6,7 @@
 [ext_resource path="res://game/ingame/ground.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/block/block_preview.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/theme.tres" type="Theme" id=6]
-
-
+[ext_resource path="res://game/ingame/block_counter.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -76,6 +75,37 @@ type = 1
 visibility/opacity = 1.0
 transform/pos = Vector2( 210.91, 71.5663 )
 type = 2
+
+[node name="block_counter" type="Container" parent="."]
+
+anchor/right = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+theme/theme = ExtResource( 6 )
+margin/left = 400.0
+margin/top = 20.0
+margin/right = 400.0
+margin/bottom = 120.0
+script/script = ExtResource( 7 )
+
+[node name="used" type="Label" parent="block_counter"]
+
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 150.0
+margin/bottom = 0.0
+text = "Used:"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="finished" type="Button" parent="."]
 

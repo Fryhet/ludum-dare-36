@@ -5,6 +5,8 @@
 
 [node name="template" instance=ExtResource( 1 )]
 
+max_blocks = 15
+
 [node name="block" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 0, -32.9937 )
