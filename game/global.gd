@@ -7,7 +7,7 @@ const BOX_TYPE_GRAY = 1
 const BOX_TYPE_SAND = 2
 
 const BACKGROUND_COUNT = 2
-const TEMPLATE_COUNT = 3
+const TEMPLATE_COUNT = 6
 
 const GAME_MODE_NORMAL = 1
 const GAME_MODE_SELECT = 2
@@ -32,4 +32,3 @@ func get_box_type_color(type):
 	if type == BOX_TYPE_SAND:
 		return COLOR_SAND
 	assert(0)
-
