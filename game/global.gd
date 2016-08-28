@@ -6,7 +6,7 @@ const COLOR_SAND = Color("fad689")
 const BOX_TYPE_GRAY = 1
 const BOX_TYPE_SAND = 2
 
-const TEMPLATE_COUNT = 2
+const TEMPLATE_COUNT = 3
 
 const GAME_MODE_NORMAL = 1
 const GAME_MODE_SELECT = 2

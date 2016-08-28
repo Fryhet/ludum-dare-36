@@ -75,7 +75,7 @@ func on_box_landed():
 
 func _input(event):
 	if event.type == InputEvent.KEY && event.is_action("ui_cancel"):
-		get_tree().change_scene("res://game/main_menu.tscn")
+		get_tree().change_scene("res://game/main_menu/main_menu.tscn")
 		return
 
 	if event.type == InputEvent.MOUSE_MOTION:

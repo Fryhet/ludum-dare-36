@@ -34,4 +34,4 @@ func _on_change_level_pressed():
 	get_tree().change_scene("res://game/level_select/level_select.tscn")
 
 func _on_main_menu_pressed():
-	get_tree().change_scene("res://game/main_menu.tscn")
+	get_tree().change_scene("res://game/main_menu/main_menu.tscn")

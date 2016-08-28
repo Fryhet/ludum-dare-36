@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-export(int, "None", "Gray", "Yellow") var type
+export(int, "None", "Gray", "Sand") var type
 var sprite
 
 func _ready():

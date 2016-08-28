@@ -2,10 +2,12 @@
 
 [ext_resource path="res://game/ingame/ingame.gd" type="Script" id=1]
 [ext_resource path="res://game/backgrounds/background_0.tscn" type="PackedScene" id=2]
-[ext_resource path="res://game/slingshot.tscn" type="PackedScene" id=3]
-[ext_resource path="res://game/ground.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/ingame/slingshot.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/ingame/ground.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/block/block_preview.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/theme.tres" type="Theme" id=6]
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 

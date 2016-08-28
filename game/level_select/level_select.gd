@@ -15,4 +15,4 @@ func _on_level_selected(index):
 	global.start_game(index, global.GAME_MODE_SELECT)
 
 func _on_main_menu_pressed():
-	get_tree().change_scene("res://game/main_menu.tscn")
+	get_tree().change_scene("res://game/main_menu/main_menu.tscn")
