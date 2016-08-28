@@ -11,6 +11,7 @@ const MAX_LENGTH_SQUARED = MAX_LENGTH * MAX_LENGTH
 var dragging = false
 var time_launched = 0.0
 
+var block_counter
 var holder
 var current_box
 var wood
@@ -24,17 +25,17 @@ func is_launched():
 
 func set_launched(launched):
 	if launched:
-		get_node("../block_counter").increment_used()
+		block_counter.increment_used()
 	get_node("../finished").set_disabled(launched)
 	set_process_input(!launched)
 	set_process(launched)
 
 func _ready():
+	block_counter = get_node("../block_counter")
 	holder = get_node("holder")
 	wood = get_node("wood")
 	front_string = get_node("wood/front/string")
 	back_string = get_node("wood/back/string")
-	respawn_box()
 	set_process_input(true)
 
 func respawn_box():
@@ -73,7 +74,13 @@ func _process(delta):
 
 func on_box_landed():
 	current_box = null
-	respawn_box()
+	if block_counter.used >= block_counter.max_used:
+		on_all_blocks_used()
+	else:
+		respawn_box()
+
+func on_all_blocks_used():
+	get_node("../restart").show()
 
 func _input(event):
 	if event.type == InputEvent.KEY && event.is_action("ui_cancel"):
@@ -92,7 +99,7 @@ func _input(event):
 		holder.set_global_pos(pos + diff)
 		update()
 	elif event.type == InputEvent.MOUSE_BUTTON:
-		if event.button_index != BUTTON_LEFT:
+		if event.button_index != BUTTON_LEFT || current_box == null:
 			return
 
 		if event.is_pressed():

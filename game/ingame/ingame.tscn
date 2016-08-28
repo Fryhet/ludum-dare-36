@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://game/ingame/ingame.gd" type="Script" id=1]
 [ext_resource path="res://game/backgrounds/background_0.tscn" type="PackedScene" id=2]
@@ -7,11 +7,29 @@
 [ext_resource path="res://game/block/block_preview.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/theme.tres" type="Theme" id=6]
 [ext_resource path="res://game/ingame/block_counter.gd" type="Script" id=7]
+[ext_resource path="res://game/ingame/restart_button.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 50, 4000 )
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "restart_button_appear"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visibility/opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, 1.0 ] }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 1 ), "transitions":FloatArray( 1 ), "values":[ { "args":[ false ], "method":"set_disabled" } ] }
 
 [node name="ingame" type="Node"]
 
@@ -89,6 +107,8 @@ margin/top = 20.0
 margin/right = 400.0
 margin/bottom = 120.0
 script/script = ExtResource( 7 )
+bad_color = Color( 0.917969, 0.283279, 0.283279, 1 )
+good_color = Color( 1, 1, 1, 1 )
 
 [node name="used" type="Label" parent="block_counter"]
 
@@ -116,15 +136,48 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 theme/theme = ExtResource( 6 )
-margin/left = 229.0
-margin/top = 67.0
-margin/right = 29.0
-margin/bottom = 167.0
+margin/left = 230.0
+margin/top = 70.0
+margin/right = 30.0
+margin/bottom = 170.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "Finish level"
 flat = false
+
+[node name="restart" type="Button" parent="."]
+
+visibility/opacity = 0.0
+anchor/left = 1
+anchor/right = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+theme/theme = ExtResource( 6 )
+margin/left = 230.0
+margin/top = 180.0
+margin/right = 30.0
+margin/bottom = 280.0
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Restart"
+flat = false
+script/script = ExtResource( 8 )
+
+[node name="animation" type="AnimationPlayer" parent="restart"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/restart_button_appear = SubResource( 2 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
 
 [connection signal="pressed" from="finished" to="." method="_on_finished_pressed"]
 

@@ -7,6 +7,7 @@ func _ready():
 	var block_counter = get_node("block_counter")
 	block_counter.set_max_used(template.max_blocks)
 	block_counter.refresh_text()
+	get_node("slingshot").respawn_box()
 
 func _on_finished_pressed():
 	var block_counter = get_node("block_counter")
