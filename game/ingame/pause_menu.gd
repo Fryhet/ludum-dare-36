@@ -10,10 +10,6 @@ func _input(event):
 		set_menu_visible(!visible)
 
 func set_menu_visible(visible):
-	if visible:
-		print("show")
-	else:
-		print("hide")
 	self.visible = visible
 	get_tree().set_pause(visible)
 	var restart = get_node("../restart")
