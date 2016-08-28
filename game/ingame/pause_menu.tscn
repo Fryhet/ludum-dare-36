@@ -9,7 +9,7 @@
 process/pause_mode = 2
 anchor/right = 1
 anchor/bottom = 1
-focus/ignore_mouse = false
+focus/ignore_mouse = true
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2

@@ -43,6 +43,8 @@ func respawn_box():
 		return # there's no way back!
 	if current_box != null:
 		current_box.queue_free()
+	if block_counter.used >= block_counter.max_used:
+		return
 
 	time_launched = 0.0
 	current_box = box_scene.instance()

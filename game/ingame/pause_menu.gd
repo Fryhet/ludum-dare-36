@@ -10,6 +10,7 @@ func _input(event):
 		set_menu_visible(!visible)
 
 func set_menu_visible(visible):
+	set_ignore_mouse(!visible)
 	self.visible = visible
 	get_tree().set_pause(visible)
 	var restart = get_node("../restart")
