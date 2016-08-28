@@ -1,13 +1,12 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://game/ingame/ingame.gd" type="Script" id=1]
-[ext_resource path="res://game/backgrounds/background_0.tscn" type="PackedScene" id=2]
-[ext_resource path="res://game/ingame/slingshot.tscn" type="PackedScene" id=3]
-[ext_resource path="res://game/ingame/ground.tscn" type="PackedScene" id=4]
-[ext_resource path="res://game/block/block_preview.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/theme.tres" type="Theme" id=6]
-[ext_resource path="res://game/ingame/block_counter.gd" type="Script" id=7]
-[ext_resource path="res://game/ingame/restart_button.gd" type="Script" id=8]
+[ext_resource path="res://game/ingame/slingshot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/ingame/ground.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/block/block_preview.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/theme.tres" type="Theme" id=5]
+[ext_resource path="res://game/ingame/block_counter.gd" type="Script" id=6]
+[ext_resource path="res://game/ingame/restart_button.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -35,13 +34,13 @@ tracks/1/keys = { "times":FloatArray( 1 ), "transitions":FloatArray( 1 ), "value
 
 script/script = ExtResource( 1 )
 
-[node name="background" parent="." instance=ExtResource( 2 )]
+[node name="background" type="Node2D" parent="."]
 
-[node name="slingshot" parent="." instance=ExtResource( 3 )]
+[node name="slingshot" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 225.783, 493.982 )
 
-[node name="ground" parent="." instance=ExtResource( 4 )]
+[node name="ground" parent="." instance=ExtResource( 3 )]
 
 [node name="borders" type="StaticBody2D" parent="."]
 
@@ -82,13 +81,13 @@ transform/pos = Vector2( 844.193, 630.769 )
 
 editor/display_folded = true
 
-[node name="black_block" parent="block_selection" instance=ExtResource( 5 )]
+[node name="black_block" parent="block_selection" instance=ExtResource( 4 )]
 
 visibility/opacity = 1.0
 transform/pos = Vector2( 83.6571, 71.5663 )
 type = 1
 
-[node name="yellow_block" parent="block_selection" instance=ExtResource( 5 )]
+[node name="yellow_block" parent="block_selection" instance=ExtResource( 4 )]
 
 visibility/opacity = 1.0
 transform/pos = Vector2( 210.91, 71.5663 )
@@ -96,17 +95,18 @@ type = 2
 
 [node name="block_counter" type="Container" parent="."]
 
+editor/display_folded = true
 anchor/right = 1
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-theme/theme = ExtResource( 6 )
+theme/theme = ExtResource( 5 )
 margin/left = 400.0
 margin/top = 20.0
 margin/right = 400.0
 margin/bottom = 120.0
-script/script = ExtResource( 7 )
+script/script = ExtResource( 6 )
 bad_color = Color( 0.917969, 0.283279, 0.283279, 1 )
 good_color = Color( 1, 1, 1, 1 )
 
@@ -135,7 +135,7 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-theme/theme = ExtResource( 6 )
+theme/theme = ExtResource( 5 )
 margin/left = 230.0
 margin/top = 70.0
 margin/right = 30.0
@@ -155,7 +155,7 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-theme/theme = ExtResource( 6 )
+theme/theme = ExtResource( 5 )
 margin/left = 230.0
 margin/top = 180.0
 margin/right = 30.0
@@ -166,7 +166,7 @@ enabled_focus_mode = 2
 shortcut = null
 text = "Restart"
 flat = false
-script/script = ExtResource( 8 )
+script/script = ExtResource( 7 )
 
 [node name="animation" type="AnimationPlayer" parent="restart"]
 
