@@ -22,6 +22,11 @@ var current_box_type = global.BOX_TYPE_YELLOW
 func is_launched():
 	return is_processing()
 
+func set_launched(launched):
+	get_node("../finished").set_disabled(launched)
+	set_process_input(!launched)
+	set_process(launched)
+
 func _ready():
 	holder = get_node("holder")
 	wood = get_node("wood")
@@ -60,8 +65,7 @@ func _draw():
 func _process(delta):
 	time_launched += delta
 	if time_launched > 1.0 && current_box.is_sleeping():
-		set_process(false)
-		set_process_input(true)
+		set_launched(false)
 		on_box_landed()
 
 func on_box_landed():
@@ -104,7 +108,6 @@ func _input(event):
 
 			current_box.launch(dir, MAX_SPEED * (length / MAX_LENGTH))
 			holder.set_pos(Vector2(0.0, 0.0))
-			set_process_input(false)
-			set_process(true)
+			set_launched(true)
 			update()
 
