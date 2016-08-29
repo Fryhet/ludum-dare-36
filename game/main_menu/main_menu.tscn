@@ -22,6 +22,7 @@ script/script = ExtResource( 2 )
 
 [node name="play" parent="." instance=ExtResource( 3 )]
 
+editor/display_folded = true
 margin/top = 0.0
 margin/bottom = 177.0
 
@@ -33,6 +34,7 @@ text = "Play"
 
 [node name="level_select" parent="." instance=ExtResource( 3 )]
 
+editor/display_folded = true
 margin/top = 181.0
 margin/bottom = 358.0
 
@@ -44,6 +46,7 @@ text = "Level select"
 
 [node name="help" parent="." instance=ExtResource( 3 )]
 
+editor/display_folded = true
 margin/top = 362.0
 margin/bottom = 539.0
 
@@ -55,6 +58,7 @@ text = "Help"
 
 [node name="exit" parent="." instance=ExtResource( 3 )]
 
+editor/display_folded = true
 margin/top = 543.0
 
 [node name="button" parent="exit"]

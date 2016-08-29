@@ -29,9 +29,11 @@ func set_button_enabled(button, enabled):
 	button.set_disabled(!enabled)
 
 func _on_main_menu_pressed():
+	sample_player.play("button")
 	set_menu_visible(false)
 	scene_switcher.switch_scene(load("res://game/main_menu/main_menu.tscn"))
 
 func _on_restart_pressed():
+	sample_player.play("button")
 	set_menu_visible(false)
 	get_node("../restart")._pressed()

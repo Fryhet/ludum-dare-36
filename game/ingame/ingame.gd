@@ -15,6 +15,7 @@ func _ready():
 	get_node("slingshot").respawn_box()
 
 func _on_finished_pressed():
+	sample_player.play("button")
 	var block_counter = get_node("block_counter")
 
 	global.shape_precision = get_node("template/template").check_shape_precision()

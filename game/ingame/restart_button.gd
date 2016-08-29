@@ -5,4 +5,5 @@ func show():
 
 func _pressed():
 	# yeah, not the ideal way, but who cares?
-	scene_switcher.switch_scene("res://game/ingame/ingame.tscn")
+	sample_player.play("button")
+	scene_switcher.switch_scene(load("res://game/ingame/ingame.tscn"))

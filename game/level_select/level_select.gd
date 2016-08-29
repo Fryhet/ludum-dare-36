@@ -17,7 +17,9 @@ func _ready():
 		button.connect("pressed", self, "_on_level_selected", [i])
 
 func _on_level_selected(index):
+	sample_player.play("button")
 	global.start_game(index, global.GAME_MODE_SELECT)
 
 func _on_main_menu_pressed():
+	sample_player.play("button")
 	scene_switcher.switch_scene(preload("res://game/main_menu/main_menu.tscn"))

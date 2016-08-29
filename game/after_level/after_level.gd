@@ -7,13 +7,17 @@ func _ready():
 	stats.generate_verdict()
 
 func _on_retry_pressed():
+	sample_player.play("button")
 	global.start_game(global.template_to_load, global.game_mode)
 
 func _on_next_level_pressed():
+	sample_player.play("button")
 	global.start_game(global.template_to_load + 1, global.GAME_MODE_NORMAL)
 
 func _on_change_level_pressed():
+	sample_player.play("button")
 	scene_switcher.switch_scene(load("res://game/level_select/level_select.tscn"))
 
 func _on_main_menu_pressed():
+	sample_player.play("button")
 	scene_switcher.switch_scene(load("res://game/main_menu/main_menu.tscn"))
