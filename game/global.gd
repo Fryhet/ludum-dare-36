@@ -2,7 +2,7 @@ extends Node
 
 const COLOR_GRAY = Color(0.5, 0.5, 0.5, 1.0)
 const COLOR_SAND = Color("fad689")
-const COLOR_DESTROYER = Color(0.1, 0.1, 0.1, 1.0)
+const COLOR_DESTROYER = Color(1.0, 1.0, 1.0, 1.0)
 
 const BOX_TYPE_GRAY = 1
 const BOX_TYPE_SAND = 2

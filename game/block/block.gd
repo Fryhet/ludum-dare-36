@@ -5,9 +5,6 @@ var sprite
 
 func _ready():
 	sprite = get_node("sprite")
-	var rect = sprite.get_region_rect()
-	rect.pos.x = (randi() % (sprite.get_texture().get_width() / int(rect.size.x))) * rect.size.x
-	sprite.set_region_rect(rect)
 	set_type(type)
 
 func set_type(typ):
@@ -22,11 +19,14 @@ func set_type(typ):
 		set_weight(10.0)
 		set_friction(0.8)
 	elif type == global.BOX_TYPE_DESTROYER:
+		set_weight(10.0)
 		connect_rigidbody()
+
+	sprite.reload_texture(type)
 
 func connect_rigidbody():
 	set_contact_monitor(true)
-	set_max_contacts_reported(5)
+	set_max_contacts_reported(3)
 	connect("body_enter", self, "on_body_enter")
 
 func disconnect_rigidbody():
