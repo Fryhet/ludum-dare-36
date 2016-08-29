@@ -46,8 +46,14 @@ func launch(dir, speed):
 
 func on_body_enter(body):
 	if body.is_in_group("block") && get_linear_velocity().length_squared() > global.DESTROYER_LETHAL_VELOCITY_SQUARED:
-		body.queue_free()
+		body.destroy()
 
 func on_landed():
 	if type == global.BOX_TYPE_DESTROYER:
-		queue_free()
+		destroy()
+
+func destroy():
+	var explosion = preload("res://game/block/explosion.tscn").instance()
+	get_tree().get_current_scene().add_child(explosion)
+	explosion.start(get_global_pos(), global.get_particles_color(type))
+	queue_free()
