@@ -8,4 +8,4 @@ func _input(event):
 		_on_main_menu_pressed()
 
 func _on_main_menu_pressed():
-	get_tree().change_scene("res://game/main_menu/main_menu.tscn")
+	get_node("..").switch_menu(preload("res://game/main_menu/main_menu.tscn"))
