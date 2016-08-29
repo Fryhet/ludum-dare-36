@@ -30,7 +30,7 @@ func set_button_enabled(button, enabled):
 
 func _on_main_menu_pressed():
 	set_menu_visible(false)
-	get_tree().change_scene("res://game/main.tscn")
+	scene_switcher.switch_scene(load("res://game/main_menu/main_menu.tscn"))
 
 func _on_restart_pressed():
 	set_menu_visible(false)

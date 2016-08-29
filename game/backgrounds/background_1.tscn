@@ -1,15 +1,10 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=7 format=1]
 
-[ext_resource path="res://assets/white_texture.png" type="Texture" id=1]
-[ext_resource path="res://assets/gradient.png" type="Texture" id=2]
-[ext_resource path="res://assets/background/stars.png" type="Texture" id=3]
-[ext_resource path="res://assets/background/sun.png" type="Texture" id=4]
-[ext_resource path="res://assets/background/moon.png" type="Texture" id=5]
-[ext_resource path="res://assets/background/pyramide_side.png" type="Texture" id=6]
-[ext_resource path="res://assets/background/pyramide_front.png" type="Texture" id=7]
-[ext_resource path="res://assets/background/sand_1.png" type="Texture" id=8]
-[ext_resource path="res://assets/background/sand_0.png" type="Texture" id=9]
-[ext_resource path="res://assets/background/sphinx.png" type="Texture" id=10]
+[ext_resource path="res://assets/background/pyramide_side.png" type="Texture" id=1]
+[ext_resource path="res://assets/background/pyramide_front.png" type="Texture" id=2]
+[ext_resource path="res://assets/background/sand_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/background/sand_0.png" type="Texture" id=4]
+[ext_resource path="res://assets/background/sphinx.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -18,107 +13,44 @@ length = 40.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("sky:modulate")
+tracks/0/path = NodePath("pyramide_back/side:modulate")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 5.2, 10.2, 14.8, 20, 22, 30.6, 38 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 1, 0.552856, 0.226562, 1 ), Color( 0.716614, 0.763261, 0.777344, 1 ), Color( 0.63446, 0.839559, 0.902344, 1 ), Color( 0.713726, 0.760784, 0.776471, 1 ), Color( 1, 0.54902, 0.223529, 1 ), Color( 0.283051, 0.294961, 0.414062, 1 ), Color( 0.230225, 0.241323, 0.359375, 1 ), Color( 0.282353, 0.294118, 0.411765, 1 ) ] }
+tracks/0/keys = { "times":FloatArray( 0, 5.2, 15, 19.1, 29.4 ), "transitions":FloatArray( 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.644531, 0.532469, 0.332336, 1 ), Color( 0.956863, 0.807843, 0.541176, 1 ), Color( 0.768627, 0.615686, 0.345098, 1 ), Color( 0.643137, 0.529412, 0.329412, 1 ), Color( 0.596078, 0.490196, 0.301961, 1 ) ] }
 tracks/1/type = "value"
-tracks/1/path = NodePath("sky/gradient:modulate")
+tracks/1/path = NodePath("pyramide_front/side:modulate")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0, 6, 9.8, 14, 20 ), "transitions":FloatArray( 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 0, 0, 0, 1 ), Color( 0.921569, 0.921569, 0.921569, 1 ), Color( 1, 1, 1, 1 ), Color( 0.921875, 0.921875, 0.921875, 1 ), Color( 0, 0, 0, 1 ) ] }
+tracks/1/keys = { "times":FloatArray( 0, 5.2, 15, 19.1, 29.4 ), "transitions":FloatArray( 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.643137, 0.529412, 0.329412, 1 ), Color( 0.956863, 0.807843, 0.541176, 1 ), Color( 0.769531, 0.617587, 0.345688, 1 ), Color( 0.643137, 0.529412, 0.329412, 1 ), Color( 0.597656, 0.491024, 0.303497, 1 ) ] }
 tracks/2/type = "value"
-tracks/2/path = NodePath("sky/stars:visibility/opacity")
+tracks/2/path = NodePath("pyramide_front/front:modulate")
 tracks/2/interp = 1
 tracks/2/imported = false
-tracks/2/keys = { "times":FloatArray( 0, 24, 30.6, 36.1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 0.0, 1.0, 0.0 ] }
+tracks/2/keys = { "times":FloatArray( 0, 5.2, 15, 19.1, 29.4 ), "transitions":FloatArray( 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.670588, 0.564706, 0.384314, 1 ), Color( 0.898438, 0.778041, 0.565033, 1 ), Color( 0.956863, 0.807843, 0.541176, 1 ), Color( 0.670588, 0.564706, 0.384314, 1 ), Color( 0.623529, 0.52549, 0.352941, 1 ) ] }
 tracks/3/type = "value"
-tracks/3/path = NodePath("modulate:color")
+tracks/3/path = NodePath("pyramide_back/front:modulate")
 tracks/3/interp = 1
 tracks/3/imported = false
-tracks/3/keys = { "times":FloatArray( 0, 10, 19.7, 30.6 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ Color( 1, 0.84256, 0.738281, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0.839216, 0.737255, 1 ), Color( 0.566406, 0.599574, 1, 1 ) ] }
+tracks/3/keys = { "times":FloatArray( 0, 5.2, 15, 19.1, 29.4 ), "transitions":FloatArray( 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.671875, 0.568338, 0.385803, 1 ), Color( 0.898039, 0.776471, 0.564706, 1 ), Color( 0.957031, 0.8113, 0.542068, 1 ), Color( 0.670588, 0.564706, 0.384314, 1 ), Color( 0.625, 0.525828, 0.354004, 1 ) ] }
 tracks/4/type = "value"
-tracks/4/path = NodePath("earth_center:transform/rot")
+tracks/4/path = NodePath("sand1:modulate")
 tracks/4/interp = 1
 tracks/4/imported = false
-tracks/4/keys = { "times":FloatArray( 0, 40 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, -360.0 ] }
+tracks/4/keys = { "times":FloatArray( 0, 9.5, 19.1, 29.4 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.882812, 0.882812, 0.882812, 1 ), Color( 1, 1, 1, 1 ), Color( 0.882353, 0.882353, 0.882353, 1 ), Color( 0.867188, 0.867188, 0.867188, 1 ) ] }
 tracks/5/type = "value"
-tracks/5/path = NodePath("pyramide_back/side:modulate")
+tracks/5/path = NodePath("sand:modulate")
 tracks/5/interp = 1
 tracks/5/imported = false
-tracks/5/keys = { "times":FloatArray( 0, 5.2, 15, 19.1, 29.4 ), "transitions":FloatArray( 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.644531, 0.532469, 0.332336, 1 ), Color( 0.956863, 0.807843, 0.541176, 1 ), Color( 0.768627, 0.615686, 0.345098, 1 ), Color( 0.643137, 0.529412, 0.329412, 1 ), Color( 0.596078, 0.490196, 0.301961, 1 ) ] }
+tracks/5/keys = { "times":FloatArray( 0, 9.5, 19.1, 29.4 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.957031, 0.957031, 0.957031, 1 ), Color( 1, 1, 1, 1 ), Color( 0.956863, 0.956863, 0.956863, 1 ), Color( 0.875, 0.875, 0.875, 1 ) ] }
 tracks/6/type = "value"
-tracks/6/path = NodePath("pyramide_front/side:modulate")
+tracks/6/path = NodePath("sphinx:modulate")
 tracks/6/interp = 1
 tracks/6/imported = false
-tracks/6/keys = { "times":FloatArray( 0, 5.2, 15, 19.1, 29.4 ), "transitions":FloatArray( 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.643137, 0.529412, 0.329412, 1 ), Color( 0.956863, 0.807843, 0.541176, 1 ), Color( 0.769531, 0.617587, 0.345688, 1 ), Color( 0.643137, 0.529412, 0.329412, 1 ), Color( 0.597656, 0.491024, 0.303497, 1 ) ] }
-tracks/7/type = "value"
-tracks/7/path = NodePath("pyramide_front/front:modulate")
-tracks/7/interp = 1
-tracks/7/imported = false
-tracks/7/keys = { "times":FloatArray( 0, 5.2, 15, 19.1, 29.4 ), "transitions":FloatArray( 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.670588, 0.564706, 0.384314, 1 ), Color( 0.898438, 0.778041, 0.565033, 1 ), Color( 0.956863, 0.807843, 0.541176, 1 ), Color( 0.670588, 0.564706, 0.384314, 1 ), Color( 0.623529, 0.52549, 0.352941, 1 ) ] }
-tracks/8/type = "value"
-tracks/8/path = NodePath("pyramide_back/front:modulate")
-tracks/8/interp = 1
-tracks/8/imported = false
-tracks/8/keys = { "times":FloatArray( 0, 5.2, 15, 19.1, 29.4 ), "transitions":FloatArray( 1, 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.671875, 0.568338, 0.385803, 1 ), Color( 0.898039, 0.776471, 0.564706, 1 ), Color( 0.957031, 0.8113, 0.542068, 1 ), Color( 0.670588, 0.564706, 0.384314, 1 ), Color( 0.625, 0.525828, 0.354004, 1 ) ] }
-tracks/9/type = "value"
-tracks/9/path = NodePath("sand1:modulate")
-tracks/9/interp = 1
-tracks/9/imported = false
-tracks/9/keys = { "times":FloatArray( 0, 9.5, 19.1, 29.4 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.882812, 0.882812, 0.882812, 1 ), Color( 1, 1, 1, 1 ), Color( 0.882353, 0.882353, 0.882353, 1 ), Color( 0.867188, 0.867188, 0.867188, 1 ) ] }
-tracks/10/type = "value"
-tracks/10/path = NodePath("sand:modulate")
-tracks/10/interp = 1
-tracks/10/imported = false
-tracks/10/keys = { "times":FloatArray( 0, 9.5, 19.1, 29.4 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.957031, 0.957031, 0.957031, 1 ), Color( 1, 1, 1, 1 ), Color( 0.956863, 0.956863, 0.956863, 1 ), Color( 0.875, 0.875, 0.875, 1 ) ] }
-tracks/11/type = "value"
-tracks/11/path = NodePath("sphinx:modulate")
-tracks/11/interp = 1
-tracks/11/imported = false
-tracks/11/keys = { "times":FloatArray( 0, 9.5, 19.1, 29.4 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.933594, 0.933594, 0.933594, 1 ), Color( 1, 1, 1, 1 ), Color( 0.914062, 0.914062, 0.914062, 1 ), Color( 0.851562, 0.947815, 1, 1 ) ] }
+tracks/6/keys = { "times":FloatArray( 0, 9.5, 19.1, 29.4 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ Color( 0.933594, 0.933594, 0.933594, 1 ), Color( 1, 1, 1, 1 ), Color( 0.914062, 0.914062, 0.914062, 1 ), Color( 0.851562, 0.947815, 1, 1 ) ] }
 
 [node name="background" type="Node2D"]
 
 z/z = -2
-
-[node name="sky" type="Sprite" parent="."]
-
-editor/display_folded = true
-transform/pos = Vector2( 667.196, 433.774 )
-transform/scale = Vector2( 1275.17, 903.402 )
-texture = ExtResource( 1 )
-modulate = Color( 1, 0.552856, 0.226562, 1 )
-
-[node name="gradient" type="Sprite" parent="sky"]
-
-visibility/opacity = 0.5
-transform/pos = Vector2( 0.00388464, -0.0625015 )
-transform/scale = Vector2( 0.767846, 0.0364958 )
-texture = ExtResource( 2 )
-modulate = Color( 0, 0, 0, 1 )
-
-[node name="stars" type="Sprite" parent="sky"]
-
-visibility/opacity = 0.0
-transform/pos = Vector2( -0.01498, -0.282061 )
-transform/scale = Vector2( 0.00129195, 0.00129195 )
-texture = ExtResource( 3 )
-
-[node name="earth_center" type="Position2D" parent="."]
-
-editor/display_folded = true
-transform/pos = Vector2( 765.206, 776.117 )
-
-[node name="sun" type="Sprite" parent="earth_center"]
-
-transform/pos = Vector2( -700, 0 )
-texture = ExtResource( 4 )
-
-[node name="moon" type="Sprite" parent="earth_center"]
-
-transform/pos = Vector2( 700, 0 )
-texture = ExtResource( 5 )
 
 [node name="pyramide_back" type="Node2D" parent="."]
 
@@ -128,19 +60,19 @@ transform/scale = Vector2( 4.64392, 4.64392 )
 
 [node name="side" type="Sprite" parent="pyramide_back"]
 
-texture = ExtResource( 6 )
+texture = ExtResource( 1 )
 modulate = Color( 0.644531, 0.532469, 0.332336, 1 )
 
 [node name="front" type="Sprite" parent="pyramide_back"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 2 )
 modulate = Color( 0.671875, 0.568338, 0.385803, 1 )
 
 [node name="sand" type="Sprite" parent="."]
 
 transform/pos = Vector2( 654.895, 528.616 )
 transform/scale = Vector2( 3.09217, 3.09217 )
-texture = ExtResource( 8 )
+texture = ExtResource( 3 )
 modulate = Color( 0.957031, 0.957031, 0.957031, 1 )
 
 [node name="pyramide_front" type="Node2D" parent="."]
@@ -151,26 +83,26 @@ transform/scale = Vector2( 4.43468, 4.43468 )
 
 [node name="side" type="Sprite" parent="pyramide_front"]
 
-texture = ExtResource( 6 )
+texture = ExtResource( 1 )
 modulate = Color( 0.643137, 0.529412, 0.329412, 1 )
 
 [node name="front" type="Sprite" parent="pyramide_front"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 2 )
 modulate = Color( 0.670588, 0.564706, 0.384314, 1 )
 
 [node name="sand1" type="Sprite" parent="."]
 
 transform/pos = Vector2( 676.043, 572.425 )
 transform/scale = Vector2( 3.09217, 3.09217 )
-texture = ExtResource( 9 )
+texture = ExtResource( 4 )
 modulate = Color( 0.882812, 0.882812, 0.882812, 1 )
 
 [node name="sphinx" type="Sprite" parent="."]
 
 transform/pos = Vector2( 623.621, 462.49 )
 transform/scale = Vector2( 5.20509, 5.20509 )
-texture = ExtResource( 10 )
+texture = ExtResource( 5 )
 modulate = Color( 0.933594, 0.933594, 0.933594, 1 )
 
 [node name="animation_player" type="AnimationPlayer" parent="."]
@@ -183,9 +115,5 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "background_0"
-
-[node name="modulate" type="CanvasModulate" parent="."]
-
-color = Color( 1, 0.84256, 0.738281, 1 )
 
 

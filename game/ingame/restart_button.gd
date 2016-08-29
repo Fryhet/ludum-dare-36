@@ -5,4 +5,4 @@ func show():
 
 func _pressed():
 	# yeah, not the ideal way, but who cares?
-	get_tree().change_scene("res://game/ingame/ingame.tscn")
+	scene_switcher.switch_scene("res://game/ingame/ingame.tscn")

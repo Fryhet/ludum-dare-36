@@ -20,4 +20,4 @@ func _on_level_selected(index):
 	global.start_game(index, global.GAME_MODE_SELECT)
 
 func _on_main_menu_pressed():
-	get_node("..").switch_menu(preload("res://game/main_menu/main_menu.tscn"))
+	scene_switcher.switch_scene(preload("res://game/main_menu/main_menu.tscn"))

@@ -33,7 +33,7 @@ func _ready():
 func start_game(level, mode):
 	template_to_load = level
 	game_mode = mode
-	get_tree().change_scene("res://game/ingame/ingame.tscn")
+	scene_switcher.switch_scene(load("res://game/ingame/ingame.tscn"))
 
 func get_box_type_color(type):
 	if type == BOX_TYPE_GRAY:
