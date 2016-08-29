@@ -31,7 +31,7 @@ func _input_event(viewport, event, shape_idx):
 	on_click()
 
 func on_click():
-	var slingshot = get_node("/root/ingame/slingshot")
+	var slingshot = get_node("/root/main/container/ingame/slingshot")
 	slingshot.current_box_type = type
 	slingshot.respawn_box()
 
