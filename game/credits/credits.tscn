@@ -1,0 +1,136 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://assets/theme.tres" type="Theme" id=1]
+[ext_resource path="res://game/credits/credits.gd" type="Script" id=2]
+[ext_resource path="res://assets/logo.png" type="Texture" id=3]
+
+[node name="credits" type="Control"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+theme/theme = ExtResource( 1 )
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+script/script = ExtResource( 2 )
+
+[node name="panel" type="Panel" parent="."]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 150.0
+margin/top = 50.0
+margin/right = 150.0
+margin/bottom = 180.0
+
+[node name="logo" type="TextureFrame" parent="panel"]
+
+anchor/right = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 30.0
+margin/right = 0.0
+margin/bottom = 170.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="pavol_molcsan" type="RichTextLabel" parent="panel"]
+
+anchor/right = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 220.0
+margin/right = 0.0
+margin/bottom = 270.0
+custom_colors/default_color = Color( 0.273438, 0.257374, 0.214691, 1 )
+bbcode/enabled = true
+bbcode/bbcode = "[center][color=#c09d52]Pavol Molcsan[/color] - Graphics[/center]"
+visible_characters = -1
+
+[node name="milan_vasko" type="RichTextLabel" parent="panel"]
+
+anchor/right = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 270.0
+margin/right = 0.0
+margin/bottom = 320.0
+custom_colors/default_color = Color( 0.273438, 0.257374, 0.214691, 1 )
+bbcode/enabled = true
+bbcode/bbcode = "[center][color=#c09d52]Milan Vaško[/color] - Programming[/center]"
+visible_characters = -1
+
+[node name="sounds" type="RichTextLabel" parent="panel"]
+
+anchor/right = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 340.0
+margin/right = 0.0
+margin/bottom = 390.0
+custom_colors/default_color = Color( 0.273438, 0.257374, 0.214691, 1 )
+bbcode/enabled = true
+bbcode/bbcode = "[center]Sounds were kindly stolen from [color=#c09d52]http://www.freesfx.co.uk[/color][/center]"
+visible_characters = -1
+
+[node name="created_in" type="RichTextLabel" parent="panel"]
+
+anchor/right = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 420.0
+margin/right = 0.0
+margin/bottom = 470.0
+custom_colors/default_color = Color( 0.273438, 0.257374, 0.214691, 1 )
+bbcode/enabled = true
+bbcode/bbcode = "[center]Created in [color=#c09d52]72 hours[/color] for the [color=#c09d52]Ludum Dare[/color] competition.[/center]"
+visible_characters = -1
+
+[node name="main_menu" type="Button" parent="."]
+
+anchor/left = 3
+anchor/top = 1
+anchor/right = 3
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 100.0
+margin/top = 140.0
+margin/right = -100.0
+margin/bottom = 40.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Main menu"
+flat = false
+
+[connection signal="pressed" from="main_menu" to="." method="_on_main_menu_pressed"]
+
+

@@ -21,5 +21,10 @@ func _on_sounds_toggled(pressed):
 	else:
 		AudioServer.set_fx_global_volume_scale(0.0)
 
+func _on_credits_pressed():
+	sample_player.play("button")
+	scene_switcher.switch_scene(load("res://game/credits/credits.tscn"))
+
 func _on_exit_pressed():
 	get_tree().quit()
+
