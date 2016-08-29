@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://assets/theme.tres" type="Theme" id=1]
 [ext_resource path="res://game/help/help.gd" type="Script" id=2]
+[ext_resource path="res://game/help/block.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/destroyer.png" type="Texture" id=4]
 
 [node name="help" type="Control"]
 
@@ -18,7 +20,35 @@ margin/right = 0.0
 margin/bottom = 0.0
 script/script = ExtResource( 2 )
 
-[node name="text" type="RichTextLabel" parent="."]
+[node name="TabContainer" type="TabContainer" parent="."]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 40.0
+margin/top = 20.0
+margin/right = 40.0
+margin/bottom = 140.0
+tab_align = 1
+tabs_visible = true
+
+[node name="The Story" type="Container" parent="TabContainer"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 4.0
+margin/top = 48.0
+margin/right = 4.0
+margin/bottom = 4.0
+
+[node name="text" type="RichTextLabel" parent="TabContainer/The Story"]
 
 anchor/right = 1
 anchor/bottom = 1
@@ -27,12 +57,54 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 20.0
-margin/top = 110.0
+margin/top = 20.0
 margin/right = 20.0
-margin/bottom = 140.0
+margin/bottom = 20.0
 bbcode/enabled = true
 bbcode/bbcode = "You are the chosen one.\n\nThe mighty pharaoh has decided to build the biggest monuments the world has ever seen, and you will help him. You will become a huge part of history - using one of the best innovations in Egyptian technology, [color=#fad689]a giant slingshot[/color]!\n\nPharaoh has generously agreed to outline the shape he\'s going after using his personal holographic device - you need to match it as closely as possible.\n\nIf you don\'t, chances are the pharaoh will be angry... and trust me, you don\'t want him to be angry! Don\'t worry though, it could be worse. After all, you\'re not part of the group which will carve details into the stone manually... yet."
 visible_characters = -1
+
+[node name="Blocks" type="GridContainer" parent="TabContainer"]
+
+visibility/visible = false
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 4.0
+margin/top = 32.0
+margin/right = 4.0
+margin/bottom = 4.0
+columns = 1
+
+[node name="gray" parent="TabContainer/Blocks" instance=ExtResource( 3 )]
+
+[node name="text" parent="TabContainer/Blocks/gray/text_container"]
+
+text = "This block of stone is quite heavy, both mass and friction-wise. It doesn\'t slide too much and can be used to push other blocks a great deal."
+
+[node name="sand" parent="TabContainer/Blocks" instance=ExtResource( 3 )]
+
+[node name="sprite" parent="TabContainer/Blocks/sand/sprite_container"]
+
+type = 2
+
+[node name="text" parent="TabContainer/Blocks/sand/text_container"]
+
+text = "The sandstone is lighter and more slippery than stone. You need to be a bit more careful when using it. It can be used to push other blocks more gently."
+
+[node name="destroyer" parent="TabContainer/Blocks" instance=ExtResource( 3 )]
+
+[node name="sprite" parent="TabContainer/Blocks/destroyer/sprite_container"]
+
+texture = ExtResource( 4 )
+type = 3
+
+[node name="text" parent="TabContainer/Blocks/destroyer/text_container"]
+
+text = "The destroyer! It will crush other blocks, given enough power on impact. Also, it will self-destruct after it has landed."
 
 [node name="main_menu" type="Button" parent="."]
 
@@ -57,3 +129,6 @@ flat = false
 [connection signal="pressed" from="main_menu" to="." method="_on_main_menu_pressed"]
 
 
+[editable path="TabContainer/Blocks/gray"]
+[editable path="TabContainer/Blocks/sand"]
+[editable path="TabContainer/Blocks/destroyer"]

@@ -12,5 +12,4 @@ func start(position, color):
 func _process(delta):
 	if !particles.is_processing():
 		queue_free()
-		print("Puff")
 
