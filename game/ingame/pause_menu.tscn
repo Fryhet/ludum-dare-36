@@ -36,46 +36,81 @@ columns = 1
 
 [node name="resume" parent="container" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 margin/top = 0.0
-margin/bottom = 137.0
+margin/bottom = 102.0
 
 [node name="button" parent="container/resume"]
 
 visibility/opacity = 0.0
-margin/top = 18.0
-margin/bottom = 118.0
+margin/top = 1.0
+margin/bottom = 101.0
 disabled = true
 text = "Resume"
 
 [node name="restart" parent="container" instance=ExtResource( 3 )]
 
-margin/top = 141.0
-margin/bottom = 278.0
+margin/top = 106.0
+margin/bottom = 208.0
 
 [node name="button" parent="container/restart"]
 
 visibility/opacity = 0.0
-margin/top = 18.0
-margin/bottom = 118.0
+margin/top = 1.0
+margin/bottom = 101.0
 disabled = true
 text = "Restart"
 
+[node name="sounds" type="CenterContainer" parent="container"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 212.0
+margin/right = 1280.0
+margin/bottom = 314.0
+use_top_left = false
+
+[node name="button" type="CheckBox" parent="container/sounds"]
+
+visibility/opacity = 0.0
+rect/min_size = Vector2( 200, 100 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 518.0
+margin/top = 1.0
+margin/right = 762.0
+margin/bottom = 101.0
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Sounds enabled"
+flat = false
+
 [node name="main_menu" parent="container" instance=ExtResource( 3 )]
 
-margin/top = 282.0
-margin/bottom = 419.0
+editor/display_folded = true
+margin/top = 318.0
+margin/bottom = 420.0
 
 [node name="button" parent="container/main_menu"]
 
 visibility/opacity = 0.0
-margin/top = 18.0
-margin/bottom = 118.0
+margin/top = 1.0
+margin/bottom = 101.0
 disabled = true
 text = "Main menu"
 
 [connection signal="pressed" from="container/resume/button" to="." method="set_menu_visible" binds= [ false ]]
 
 [connection signal="pressed" from="container/restart/button" to="." method="_on_restart_pressed"]
+
+[connection signal="toggled" from="container/sounds/button" to="." method="_on_sounds_toggled"]
 
 [connection signal="pressed" from="container/main_menu/button" to="." method="_on_main_menu_pressed"]
 
