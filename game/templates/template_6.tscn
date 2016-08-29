@@ -5,81 +5,51 @@
 
 [node name="template" instance=ExtResource( 1 )]
 
-max_blocks = 30
+max_blocks = 22
 
 [node name="block" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 0, -32.6923 )
-type = 1
-
-[node name="block5" parent="." instance=ExtResource( 2 )]
-
-transform/pos = Vector2( -98.5266, -98.1678 )
-type = 1
-
-[node name="block6" parent="." instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 98.4502, -98.1678 )
-type = 1
-
-[node name="block7" parent="." instance=ExtResource( 2 )]
-
-transform/pos = Vector2( -32.8949, -98.1678 )
 type = 2
 
-[node name="block8" parent="." instance=ExtResource( 2 )]
+[node name="block3 2" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 32.7702, -98.1678 )
-type = 2
-
-[node name="block9" parent="." instance=ExtResource( 2 )]
-
-transform/pos = Vector2( -0.0528183, -163.332 )
+transform/pos = Vector2( 0, -97.8571 )
 type = 1
 
-[node name="block12" parent="." instance=ExtResource( 2 )]
+[node name="block33" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( -33.1078, -228.96 )
-type = 2
-
-[node name="block13" parent="." instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 32.6905, -228.96 )
-type = 2
-
-[node name="block14" parent="." instance=ExtResource( 2 )]
-
-transform/pos = Vector2( -0.243347, -294.54 )
-type = 1
-
-[node name="block10" parent="." instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 65.6825, -163.332 )
-type = 2
-
-[node name="block11" parent="." instance=ExtResource( 2 )]
-
-transform/pos = Vector2( -65.7478, -163.332 )
+transform/pos = Vector2( 0, -163.01 )
 type = 2
 
 [node name="block1" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 65.6683, -32.6923 )
-type = 2
-
-[node name="block2" parent="." instance=ExtResource( 2 )]
-
-transform/pos = Vector2( -65.762, -32.6923 )
+transform/pos = Vector2( 64.8934, -32.6923 )
 type = 2
 
 [node name="block3" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( -131.237, -32.6923 )
-type = 1
+transform/pos = Vector2( 64.8934, -97.8571 )
+type = 2
 
 [node name="block4" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 131.373, -32.6923 )
-type = 1
+transform/pos = Vector2( 64.8934, -163.01 )
+type = 2
+
+[node name="block2" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -64.8934, -32.6923 )
+type = 2
+
+[node name="block3 3" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -64.8934, -97.8571 )
+type = 2
+
+[node name="block34" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -64.8934, -163.01 )
+type = 2
 
 
