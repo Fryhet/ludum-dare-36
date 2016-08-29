@@ -1,10 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=3 format=1]
 
 [ext_resource path="res://assets/theme.tres" type="Theme" id=1]
 [ext_resource path="res://game/main.gd" type="Script" id=2]
-[ext_resource path="res://game/shared/menu_button.tscn" type="PackedScene" id=3]
 
-[node name="main_menu" type="GridContainer"]
+[node name="main_menu" type="Control"]
 
 anchor/right = 1
 anchor/bottom = 1
@@ -17,66 +16,116 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 0.0
 margin/bottom = 0.0
-columns = 1
 script/script = ExtResource( 2 )
 
-[node name="play" parent="." instance=ExtResource( 3 )]
+[node name="play" type="Button" parent="."]
 
-editor/display_folded = true
-margin/top = 0.0
-margin/bottom = 177.0
-
-[node name="button" parent="play"]
-
-margin/top = 38.0
-margin/bottom = 138.0
+anchor/left = 3
+anchor/right = 3
+rect/min_size = Vector2( 200, 100 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 300.0
+margin/top = 100.0
+margin/right = 0.0
+margin/bottom = 250.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
 text = "Play"
+flat = false
 
-[node name="level_select" parent="." instance=ExtResource( 3 )]
+[node name="level_select" type="Button" parent="."]
 
-editor/display_folded = true
-margin/top = 181.0
-margin/bottom = 358.0
-
-[node name="button" parent="level_select"]
-
-margin/top = 38.0
-margin/bottom = 138.0
+anchor/left = 3
+anchor/right = 3
+rect/min_size = Vector2( 200, 100 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 100.0
+margin/right = -300.0
+margin/bottom = 250.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
 text = "Level select"
+flat = false
 
-[node name="help" parent="." instance=ExtResource( 3 )]
+[node name="help" type="Button" parent="."]
 
-editor/display_folded = true
-margin/top = 362.0
-margin/bottom = 539.0
-
-[node name="button" parent="help"]
-
-margin/top = 38.0
-margin/bottom = 138.0
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+rect/min_size = Vector2( 200, 100 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 100.0
+margin/top = 2.0
+margin/right = -100.0
+margin/bottom = -98.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
 text = "Help"
+flat = false
 
-[node name="exit" parent="." instance=ExtResource( 3 )]
+[node name="sounds" type="CheckBox" parent="."]
 
-editor/display_folded = true
-margin/top = 543.0
+anchor/left = 1
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 250.0
+margin/top = 99.0
+margin/right = 60.0
+margin/bottom = 60.0
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Play sounds"
+flat = false
 
-[node name="button" parent="exit"]
+[node name="exit" type="Button" parent="."]
 
-margin/top = 38.0
-margin/bottom = 138.0
+anchor/left = 3
+anchor/top = 1
+anchor/right = 3
+anchor/bottom = 1
+rect/min_size = Vector2( 200, 100 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 100.0
+margin/top = 120.0
+margin/right = -100.0
+margin/bottom = 20.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
 text = "Exit"
+flat = false
 
-[connection signal="pressed" from="play/button" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 
-[connection signal="pressed" from="level_select/button" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="level_select" to="." method="_on_level_select_pressed"]
 
-[connection signal="pressed" from="help/button" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="help" to="." method="_on_help_pressed"]
 
-[connection signal="pressed" from="exit/button" to="." method="_on_exit_pressed"]
+[connection signal="toggled" from="sounds" to="." method="_on_sounds_toggled"]
+
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
 
 
-[editable path="play"]
-[editable path="level_select"]
-[editable path="help"]
-[editable path="exit"]
