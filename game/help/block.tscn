@@ -69,6 +69,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 20.0
 margin/bottom = 0.0
+custom_colors/font_color = Color( 0.273438, 0.257374, 0.214691, 1 )
 valign = 1
 autowrap = true
 percent_visible = 1.0

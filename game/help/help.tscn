@@ -60,8 +60,9 @@ margin/left = 20.0
 margin/top = 20.0
 margin/right = 20.0
 margin/bottom = 20.0
+custom_colors/default_color = Color( 0.273438, 0.257374, 0.214691, 1 )
 bbcode/enabled = true
-bbcode/bbcode = "You are the chosen one.\n\nThe mighty pharaoh has decided to build the biggest monuments the world has ever seen, and you will help him. You will become a huge part of history - using one of the best innovations in Egyptian technology, [color=#fad689]a giant slingshot[/color]!\n\nPharaoh has generously agreed to outline the shape he\'s going after using his personal holographic device - you need to match it as closely as possible.\n\nIf you don\'t, chances are the pharaoh will be angry... and trust me, you don\'t want him to be angry! Don\'t worry though, it could be worse. After all, you\'re not part of the group which will carve details into the stone manually... yet."
+bbcode/bbcode = "You are the chosen one.\n\nThe mighty pharaoh has decided to build the biggest monuments the world has ever seen, and you will help him. You will become a huge part of history - using one of the best innovations in Egyptian technology, [color=#c09d52]a giant slingshot[/color]!\n\nPharaoh has generously agreed to outline the shape he\'s going after using his personal holographic device - you need to match it as closely as possible.\n\nIf you don\'t, chances are the pharaoh will be angry... and trust me, you don\'t want him to be angry! Don\'t worry though, it could be worse. After all, you\'re not a part of the group which will carve details into the stone manually... yet."
 visible_characters = -1
 
 [node name="Blocks" type="GridContainer" parent="TabContainer"]
