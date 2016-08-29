@@ -1,0 +1,16 @@
+[gd_resource type="SampleLibrary" load_steps=6 format=1]
+
+[ext_resource path="res://assets/sound/block_crash.wav" type="Sample" id=1]
+[ext_resource path="res://assets/sound/blocks_collide.wav" type="Sample" id=2]
+[ext_resource path="res://assets/sound/button.wav" type="Sample" id=3]
+[ext_resource path="res://assets/sound/rubber.wav" type="Sample" id=4]
+[ext_resource path="res://assets/sound/sand_collide.wav" type="Sample" id=5]
+
+[resource]
+
+samples/block_crash = { "db":0.0, "pitch":1.0, "sample":ExtResource( 1 ) }
+samples/blocks_collide = { "db":0.0, "pitch":1.0, "sample":ExtResource( 2 ) }
+samples/button = { "db":0.0, "pitch":1.0, "sample":ExtResource( 3 ) }
+samples/rubber = { "db":0.0, "pitch":1.0, "sample":ExtResource( 4 ) }
+samples/sand_collide = { "db":0.0, "pitch":1.0, "sample":ExtResource( 5 ) }
+
