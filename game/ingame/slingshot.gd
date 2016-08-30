@@ -90,7 +90,7 @@ func _input(event):
 		if !dragging:
 			return
 		var pos = wood.get_global_pos()
-		var diff = event.global_pos - pos
+		var diff = event.pos - pos
 		var length = diff.length()
 		if length > MAX_LENGTH:
 			diff = diff / length * MAX_LENGTH
@@ -102,10 +102,10 @@ func _input(event):
 			return
 
 		if event.is_pressed():
-			dragging = (event.global_pos - get_global_pos()).length_squared() < CLICK_RADIUS_SQUARED
+			dragging = (event.pos - get_global_pos()).length_squared() < CLICK_RADIUS_SQUARED
 		elif dragging:
 			dragging = false
-			var diff = event.global_pos - get_global_pos()
+			var diff = event.pos - get_global_pos()
 			var length = diff.length()
 			if length > MAX_LENGTH:
 				length = MAX_LENGTH
