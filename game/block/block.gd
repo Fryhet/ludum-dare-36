@@ -57,7 +57,7 @@ func _integrate_forces(state):
 				continue
 			block_colliding = true
 
-			get_node("sample_player").play("blocks_collide")
+			get_node("sounds/blocks_collide").play("blocks_collide")
 			if type == global.BOX_TYPE_DESTROYER && \
 					(velocity.length_squared() > global.DESTROYER_LETHAL_VELOCITY_SQUARED || \
 					velocity_before.length_squared() > global.DESTROYER_LETHAL_VELOCITY_SQUARED):
@@ -66,7 +66,7 @@ func _integrate_forces(state):
 			if ground_colliding:
 				continue
 			ground_colliding = true
-			get_node("sample_player").play("sand_collide")
+			get_node("sounds/sand_collide").play("sand_collide")
 	velocity_before = velocity
 
 func on_landed():

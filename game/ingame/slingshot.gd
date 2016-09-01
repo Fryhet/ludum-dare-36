@@ -49,14 +49,12 @@ func respawn_box():
 	time_launched = 0.0
 	current_box = box_scene.instance()
 	current_box.set_type(current_box_type)
-	#get_node("..").call_deferred("add_child", current_box)
-	holder.add_child(current_box)
-	current_box.set_scale(Vector2(1.0, 1.0) / get_scale())
-	current_box.set_pos(Vector2(0.0, 0.0))
+	get_node("..").call_deferred("add_child", current_box)
+	current_box.set_pos(holder.get_global_pos())
 	current_box.set_rotd(90 * (randi() % 4))
 
 func _draw():
-	var pos = get_global_pos()
+	var pos = get_pos()
 	var scale = get_scale()
 	var target = holder.get_global_pos() - pos
 	var length = target.length()
@@ -95,7 +93,9 @@ func _input(event):
 		if length > MAX_LENGTH:
 			diff = diff / length * MAX_LENGTH
 			length = MAX_LENGTH
-		holder.set_global_pos(pos + diff)
+		pos += diff
+		holder.set_global_pos(pos)
+		current_box.set_pos(pos)
 		update()
 	elif event.type == InputEvent.MOUSE_BUTTON:
 		if event.button_index != BUTTON_LEFT || current_box == null:
@@ -110,10 +110,6 @@ func _input(event):
 			if length > MAX_LENGTH:
 				length = MAX_LENGTH
 			var dir = -diff.normalized()
-
-			holder.remove_child(current_box)
-			get_node("..").add_child(current_box)
-			current_box.set_global_pos(holder.get_global_pos())
 
 			current_box.launch(dir, MAX_SPEED * (length / MAX_LENGTH) * current_box.get_weight())
 			holder.set_pos(Vector2(0.0, 0.0))
