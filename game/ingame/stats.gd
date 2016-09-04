@@ -31,7 +31,7 @@ func refresh_text():
 		used_label.set("custom_colors/font_color", bad_color)
 	else:
 		used_label.set("custom_colors/font_color", good_color)
-	used_label.set_text(str("Used: ", used, "/", max_used))
+	used_label.set_text(str(tr("USED"), ": ", used, "/", max_used))
 
 	precision_label.set("custom_colors/font_color", color_ramp.interpolate(precision))
-	precision_label.set_text("Precision: %.2f%%" % (precision * 100.0))
+	precision_label.set_text(str(tr("PRECISION"), ": %.2f%%") % (precision * 100.0))

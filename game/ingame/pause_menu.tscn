@@ -36,7 +36,6 @@ columns = 1
 
 [node name="resume" parent="container" instance=ExtResource( 3 )]
 
-editor/display_folded = true
 margin/top = 0.0
 margin/bottom = 102.0
 
@@ -46,7 +45,7 @@ visibility/opacity = 0.0
 margin/top = 1.0
 margin/bottom = 101.0
 disabled = true
-text = "Resume"
+text = "RESUME"
 
 [node name="restart" parent="container" instance=ExtResource( 3 )]
 
@@ -59,7 +58,7 @@ visibility/opacity = 0.0
 margin/top = 1.0
 margin/bottom = 101.0
 disabled = true
-text = "Restart"
+text = "RESTART"
 
 [node name="sounds" type="CenterContainer" parent="container"]
 
@@ -81,20 +80,20 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 518.0
+margin/left = 492.0
 margin/top = 1.0
-margin/right = 762.0
+margin/right = 787.0
 margin/bottom = 101.0
 disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Sounds enabled"
+text = "SOUNDS_ENABLED"
 flat = false
+align = 0
 
 [node name="main_menu" parent="container" instance=ExtResource( 3 )]
 
-editor/display_folded = true
 margin/top = 318.0
 margin/bottom = 420.0
 
@@ -104,7 +103,7 @@ visibility/opacity = 0.0
 margin/top = 1.0
 margin/bottom = 101.0
 disabled = true
-text = "Main menu"
+text = "MAIN_MENU"
 
 [connection signal="pressed" from="container/resume/button" to="." method="set_menu_visible" binds= [ false ]]
 

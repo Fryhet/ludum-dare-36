@@ -42,7 +42,7 @@ margin/top = 30.0
 margin/right = 340.0
 margin/bottom = 90.0
 custom_colors/font_color = Color( 0.270588, 0.254902, 0.211765, 1 )
-text = "Pharaoh reviews..."
+text = "PHARAOH_REVIEWS"
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -62,7 +62,7 @@ margin/right = 0.0
 margin/bottom = 120.0
 columns = 1
 
-[node name="shape_precision" type="Label" parent="panel/container"]
+[node name="precision" type="Label" parent="panel/container"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -73,7 +73,7 @@ margin/top = 0.0
 margin/right = 1180.0
 margin/bottom = 83.0
 custom_colors/font_color = Color( 0.270588, 0.254902, 0.211765, 1 )
-text = "Shape precision:"
+text = "PRECISION"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -91,7 +91,7 @@ margin/top = 87.0
 margin/right = 1180.0
 margin/bottom = 170.0
 custom_colors/font_color = Color( 0.270588, 0.254902, 0.211765, 1 )
-text = "Blocks used:"
+text = "BLOCKS_USED"
 align = 1
 valign = 1
 percent_visible = 1.0

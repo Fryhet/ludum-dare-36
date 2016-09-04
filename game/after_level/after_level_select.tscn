@@ -38,7 +38,7 @@ margin/bottom = -190.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Retry"
+text = "RETRY"
 flat = false
 
 [node name="change_level" type="Button" parent="."]
@@ -58,7 +58,7 @@ margin/bottom = -190.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Change level"
+text = "CHANGE_LEVEL"
 flat = false
 
 [node name="main_menu" type="Button" parent="."]
@@ -78,7 +78,7 @@ margin/bottom = 20.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Main menu"
+text = "MAIN_MENU"
 flat = false
 
 [connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]

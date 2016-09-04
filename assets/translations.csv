@@ -1,0 +1,27 @@
+id,en,sk
+USED,Used,Použité
+PRECISION,Precision,Presnosť
+FINISH,Finish,Hotovo
+RESUME,Resume,Pokračovať
+RESTART,Restart,Reštart
+SOUNDS_ENABLED,Sounds enabled,Zvuky zapnuté
+MAIN_MENU,Main menu,Hlavné menu
+PLAY,Play,Hrať
+LEVEL_SELECT,Level select,Výber levelu
+HELP,Help,Pomoc
+EXIT,Exit,Koniec
+CREDITS,Credits,Autori
+LEVEL,Level,Level
+RETRY,Retry,Znova
+NEXT_LEVEL,Next level,Ďalší level
+CHANGE_LEVEL,Change level,Zmeniť level
+PHARAOH_REVIEWS,Pharaoh reviews...,Faraón hodnotí...
+BLOCKS_USED,Blocks used,Použité bloky
+VERDICT_GOOD_FIRST_LEVEL,"Good job, now onto something bigger!","Dobrá práca, teraz ideme na niečo trochu väčšie!"
+VERDICT_BAD_FIRST_LEVEL,"Come on, you can do better!","No tak! Vieš to urobiť lepšie."
+VERDICT_95_TO_100,"Great, this is exacly what I wanted!","Super, toto je presne to, čo som chcel!"
+VERDICT_80_TO_95,"Nice, great job!","Výborne, dobrá práca!"
+VERDICT_60_TO_80,"Yeah, it's quite good!","Celkom dobré!"
+VERDICT_40_TO_60,"Not too bad.","Nie je to zlé."
+VERDICT_20_TO_40,"Come on, you can do better!","No tak! Vieš to urobiť lepšie."
+VERDICT_0_TO_20,"What is this?! Do you want to move these rocks by hand?","Čo to má znamenať?! Chceš tie skaly posúvať ručne?"

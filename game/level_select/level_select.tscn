@@ -51,7 +51,7 @@ margin/bottom = 20.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Main menu"
+text = "MAIN_MENU"
 flat = false
 
 [connection signal="pressed" from="main_menu" to="." method="_on_main_menu_pressed"]

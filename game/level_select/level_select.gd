@@ -13,7 +13,7 @@ func _ready():
 		var entry = menu_entry.instance()
 		container.add_child(entry)
 		var button = entry.get_node("button")
-		button.set_text(str("Level ", i + 1))
+		button.set_text(str(tr("LEVEL"), " ", i + 1))
 		button.connect("pressed", self, "_on_level_selected", [i])
 
 func _on_level_selected(index):

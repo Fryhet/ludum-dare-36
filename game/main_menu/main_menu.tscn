@@ -35,7 +35,7 @@ margin/bottom = 400.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Play"
+text = "PLAY"
 flat = false
 
 [node name="level_select" type="Button" parent="."]
@@ -54,7 +54,7 @@ margin/bottom = 400.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Level select"
+text = "LEVEL_SELECT"
 flat = false
 
 [node name="help" type="Button" parent="."]
@@ -75,7 +75,7 @@ margin/bottom = -190.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Help"
+text = "HELP"
 flat = false
 
 [node name="credits" type="Button" parent="."]
@@ -94,7 +94,7 @@ margin/bottom = 40.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Credits"
+text = "CREDITS"
 flat = false
 
 [node name="sounds" type="CheckBox" parent="."]
@@ -114,7 +114,7 @@ margin/bottom = 60.0
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
-text = "Play sounds"
+text = "SOUNDS_ENABLED"
 flat = false
 align = 0
 
@@ -136,7 +136,7 @@ margin/bottom = 20.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Exit"
+text = "EXIT"
 flat = false
 
 [node name="TextureFrame" type="TextureFrame" parent="."]
