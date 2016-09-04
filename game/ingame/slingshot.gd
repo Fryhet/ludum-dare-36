@@ -11,7 +11,7 @@ const MAX_LENGTH_SQUARED = MAX_LENGTH * MAX_LENGTH
 var dragging = false
 var time_launched = 0.0
 
-var block_counter
+var stats
 var holder
 var current_box
 var wood
@@ -25,13 +25,13 @@ func is_launched():
 
 func set_launched(launched):
 	if launched:
-		block_counter.increment_used()
+		stats.increment_used()
 	get_node("../finished").set_disabled(launched)
 	set_process_input(!launched)
 	set_process(launched)
 
 func _ready():
-	block_counter = get_node("../block_counter")
+	stats = get_node("../stats")
 	holder = get_node("holder")
 	wood = get_node("wood")
 	front_string = get_node("wood/front/string")
@@ -43,7 +43,7 @@ func respawn_box():
 		return # there's no way back!
 	if current_box != null:
 		current_box.queue_free()
-	if block_counter.used >= block_counter.max_used:
+	if stats.used >= stats.max_used:
 		return
 
 	time_launched = 0.0
@@ -75,7 +75,7 @@ func _process(delta):
 func on_box_landed():
 	current_box.on_landed()
 	current_box = null
-	if block_counter.used >= block_counter.max_used:
+	if stats.used >= stats.max_used:
 		on_all_blocks_used()
 	else:
 		respawn_box()

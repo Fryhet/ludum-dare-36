@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://game/ingame/ingame.gd" type="Script" id=1]
 [ext_resource path="res://game/ingame/slingshot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/ingame/ground.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/block/block_preview.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/theme.tres" type="Theme" id=5]
-[ext_resource path="res://game/ingame/block_counter.gd" type="Script" id=6]
+[ext_resource path="res://game/ingame/stats.gd" type="Script" id=6]
 [ext_resource path="res://game/ingame/pause_menu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://game/ingame/restart_button.gd" type="Script" id=8]
 
@@ -13,6 +13,11 @@
 
 custom_solver_bias = 0.0
 extents = Vector2( 50, 4000 )
+
+[sub_resource type="ColorRamp" id=3]
+
+offsets = FloatArray( 0, 1 )
+colors = ColorArray( 0.917647, 0.282353, 0.282353, 1, 0.319221, 0.746094, 0.244812, 1 )
 
 [sub_resource type="Animation" id=2]
 
@@ -100,9 +105,8 @@ visibility/opacity = 1.0
 transform/pos = Vector2( 322.364, 71.5663 )
 type = 3
 
-[node name="block_counter" type="Container" parent="."]
+[node name="stats" type="Panel" parent="."]
 
-editor/display_folded = true
 anchor/right = 1
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -110,25 +114,45 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 theme/theme = ExtResource( 5 )
 margin/left = 400.0
-margin/top = 20.0
+margin/top = -120.0
 margin/right = 400.0
-margin/bottom = 120.0
+margin/bottom = 100.0
 script/script = ExtResource( 6 )
 bad_color = Color( 0.917969, 0.283279, 0.283279, 1 )
 good_color = Color( 1, 1, 1, 1 )
+color_ramp = SubResource( 3 )
 
-[node name="used" type="Label" parent="block_counter"]
+[node name="used" type="Label" parent="stats"]
 
+anchor/top = 1
 anchor/bottom = 1
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 150.0
+margin/left = 50.0
+margin/top = 100.0
+margin/right = 200.0
 margin/bottom = 0.0
 text = "Used:"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="precision" type="Label" parent="stats"]
+
+anchor/top = 1
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 210.0
+margin/top = 100.0
+margin/right = 410.0
+margin/bottom = 0.0
+text = "Precision:"
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
