@@ -60,7 +60,7 @@ margin/right = 0.0
 margin/bottom = 270.0
 custom_colors/default_color = Color( 0.273438, 0.257374, 0.214691, 1 )
 bbcode/enabled = true
-bbcode/bbcode = "[center][color=#c09d52]Pavol Molcsan[/color] - Graphics[/center]"
+bbcode/bbcode = "[center][color=#c09d52]Pavol Molcsan[/color] - GRAPHICS[/center]"
 visible_characters = -1
 
 [node name="milan_vasko" type="RichTextLabel" parent="panel"]
@@ -76,7 +76,7 @@ margin/right = 0.0
 margin/bottom = 320.0
 custom_colors/default_color = Color( 0.273438, 0.257374, 0.214691, 1 )
 bbcode/enabled = true
-bbcode/bbcode = "[center][color=#c09d52]Milan Vaško[/color] - Programming[/center]"
+bbcode/bbcode = "[center][color=#c09d52]Milan Vaško[/color] - PROGRAMMING[/center]"
 visible_characters = -1
 
 [node name="sounds" type="RichTextLabel" parent="panel"]
@@ -92,7 +92,7 @@ margin/right = 0.0
 margin/bottom = 390.0
 custom_colors/default_color = Color( 0.273438, 0.257374, 0.214691, 1 )
 bbcode/enabled = true
-bbcode/bbcode = "[center]Sounds were kindly stolen from [color=#c09d52]http://www.freesfx.co.uk[/color][/center]"
+bbcode/bbcode = "[center]CREDITS_SOUNDS [color=#c09d52]http://www.freesfx.co.uk[/color][/center]"
 visible_characters = -1
 
 [node name="created_in" type="RichTextLabel" parent="panel"]
@@ -108,7 +108,7 @@ margin/right = 0.0
 margin/bottom = 470.0
 custom_colors/default_color = Color( 0.273438, 0.257374, 0.214691, 1 )
 bbcode/enabled = true
-bbcode/bbcode = "[center]Created in [color=#c09d52]72 hours[/color] for the [color=#c09d52]Ludum Dare[/color] competition.[/center]"
+bbcode/bbcode = "[center]CREDITS_LUDUM_DARE[/center]"
 visible_characters = -1
 
 [node name="main_menu" type="Button" parent="."]
@@ -128,7 +128,7 @@ margin/bottom = 40.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Main menu"
+text = "MAIN_MENU"
 flat = false
 
 [connection signal="pressed" from="main_menu" to="." method="_on_main_menu_pressed"]

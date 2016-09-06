@@ -20,7 +20,7 @@ margin/right = 0.0
 margin/bottom = 0.0
 script/script = ExtResource( 2 )
 
-[node name="TabContainer" type="TabContainer" parent="."]
+[node name="tab_container" type="TabContainer" parent="."]
 
 anchor/right = 1
 anchor/bottom = 1
@@ -35,8 +35,9 @@ margin/bottom = 140.0
 tab_align = 1
 tabs_visible = true
 
-[node name="The Story" type="Container" parent="TabContainer"]
+[node name="the_story" type="Container" parent="tab_container"]
 
+visibility/visible = false
 anchor/right = 1
 anchor/bottom = 1
 focus/ignore_mouse = false
@@ -48,7 +49,7 @@ margin/top = 66.0
 margin/right = 20.0
 margin/bottom = 20.0
 
-[node name="text" type="RichTextLabel" parent="TabContainer/The Story"]
+[node name="text" type="RichTextLabel" parent="tab_container/the_story"]
 
 anchor/right = 1
 anchor/bottom = 1
@@ -62,50 +63,96 @@ margin/right = 20.0
 margin/bottom = 20.0
 custom_colors/default_color = Color( 0.273438, 0.257374, 0.214691, 1 )
 bbcode/enabled = true
-bbcode/bbcode = "You are the chosen one.\n\nThe mighty pharaoh has decided to build the biggest monuments the world has ever seen, and you will help him. You will become a huge part of history - using one of the best innovations in Egyptian technology, [color=#c09d52]a giant slingshot[/color]!\n\nPharaoh has generously agreed to outline the shape he\'s going after using his personal holographic device - you need to match it as closely as possible.\n\nIf you don\'t, chances are the pharaoh will be angry... and trust me, you don\'t want him to be angry! Don\'t worry though, it could be worse. After all, you\'re not a part of the group which will carve details into the stone manually... yet."
+bbcode/bbcode = "STORY_0\n\nSTORY_1\n\nSTORY_2\n\nSTORY_3"
 visible_characters = -1
 
-[node name="Blocks" type="GridContainer" parent="TabContainer"]
+[node name="blocks" type="GridContainer" parent="tab_container"]
 
-visibility/visible = false
 anchor/right = 1
 anchor/bottom = 1
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 4.0
-margin/top = 32.0
-margin/right = 4.0
-margin/bottom = 4.0
+margin/left = 20.0
+margin/top = 66.0
+margin/right = 20.0
+margin/bottom = 20.0
 columns = 1
 
-[node name="gray" parent="TabContainer/Blocks" instance=ExtResource( 3 )]
+[node name="gray" parent="tab_container/blocks" instance=ExtResource( 3 )]
 
-[node name="text" parent="TabContainer/Blocks/gray/text_container"]
+anchor/right = 0
+margin/right = 1160.0
+margin/bottom = 155.0
 
-text = "This block of stone is quite heavy, both mass and friction-wise. It doesn\'t slide too much and can be used to push other blocks a great deal."
+[node name="sprite_container" parent="tab_container/blocks/gray"]
 
-[node name="sand" parent="TabContainer/Blocks" instance=ExtResource( 3 )]
+margin/right = 578.0
+margin/bottom = 155.0
 
-[node name="sprite" parent="TabContainer/Blocks/sand/sprite_container"]
+[node name="text_container" parent="tab_container/blocks/gray"]
+
+margin/left = 582.0
+margin/right = 1160.0
+margin/bottom = 155.0
+
+[node name="text" parent="tab_container/blocks/gray/text_container"]
+
+text = "BLOCK_0"
+
+[node name="sand" parent="tab_container/blocks" instance=ExtResource( 3 )]
+
+anchor/right = 0
+margin/top = 159.0
+margin/right = 1160.0
+margin/bottom = 314.0
+
+[node name="sprite_container" parent="tab_container/blocks/sand"]
+
+margin/right = 578.0
+margin/bottom = 155.0
+
+[node name="sprite" parent="tab_container/blocks/sand/sprite_container"]
 
 type = 2
 
-[node name="text" parent="TabContainer/Blocks/sand/text_container"]
+[node name="text_container" parent="tab_container/blocks/sand"]
 
-text = "The sandstone is lighter and more slippery than stone. You need to be a bit more careful when using it. It can be used to push other blocks more gently."
+margin/left = 582.0
+margin/right = 1160.0
+margin/bottom = 155.0
 
-[node name="destroyer" parent="TabContainer/Blocks" instance=ExtResource( 3 )]
+[node name="text" parent="tab_container/blocks/sand/text_container"]
 
-[node name="sprite" parent="TabContainer/Blocks/destroyer/sprite_container"]
+text = "BLOCK_1"
+
+[node name="destroyer" parent="tab_container/blocks" instance=ExtResource( 3 )]
+
+anchor/right = 0
+margin/top = 318.0
+margin/right = 1160.0
+margin/bottom = 473.0
+
+[node name="sprite_container" parent="tab_container/blocks/destroyer"]
+
+margin/right = 578.0
+margin/bottom = 155.0
+
+[node name="sprite" parent="tab_container/blocks/destroyer/sprite_container"]
 
 texture = ExtResource( 4 )
 type = 3
 
-[node name="text" parent="TabContainer/Blocks/destroyer/text_container"]
+[node name="text_container" parent="tab_container/blocks/destroyer"]
 
-text = "The destroyer! It will crush other blocks, given enough power on impact. Also, it will self-destruct after it has landed."
+margin/left = 582.0
+margin/right = 1160.0
+margin/bottom = 155.0
+
+[node name="text" parent="tab_container/blocks/destroyer/text_container"]
+
+text = "BLOCK_2"
 
 [node name="main_menu" type="Button" parent="."]
 
@@ -124,12 +171,12 @@ margin/bottom = 20.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Main menu"
+text = "MAIN_MENU"
 flat = false
 
 [connection signal="pressed" from="main_menu" to="." method="_on_main_menu_pressed"]
 
 
-[editable path="TabContainer/Blocks/gray"]
-[editable path="TabContainer/Blocks/sand"]
-[editable path="TabContainer/Blocks/destroyer"]
+[editable path="tab_container/blocks/gray"]
+[editable path="tab_container/blocks/sand"]
+[editable path="tab_container/blocks/destroyer"]

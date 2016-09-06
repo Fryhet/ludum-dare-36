@@ -1,27 +1,40 @@
-id,en,sk
-USED,Used,Použité
-PRECISION,Precision,Presnosť
-FINISH,Finish,Hotovo
-RESUME,Resume,Pokračovať
-RESTART,Restart,Reštart
-SOUNDS_ENABLED,Sounds enabled,Zvuky zapnuté
-MAIN_MENU,Main menu,Hlavné menu
-PLAY,Play,Hrať
-LEVEL_SELECT,Level select,Výber levelu
-HELP,Help,Pomoc
-EXIT,Exit,Koniec
-CREDITS,Credits,Autori
-LEVEL,Level,Level
-RETRY,Retry,Znova
-NEXT_LEVEL,Next level,Ďalší level
-CHANGE_LEVEL,Change level,Zmeniť level
-PHARAOH_REVIEWS,Pharaoh reviews...,Faraón hodnotí...
-BLOCKS_USED,Blocks used,Použité bloky
-VERDICT_GOOD_FIRST_LEVEL,"Good job, now onto something bigger!","Dobrá práca, teraz ideme na niečo trochu väčšie!"
-VERDICT_BAD_FIRST_LEVEL,"Come on, you can do better!","No tak! Vieš to urobiť lepšie."
-VERDICT_95_TO_100,"Great, this is exacly what I wanted!","Super, toto je presne to, čo som chcel!"
-VERDICT_80_TO_95,"Nice, great job!","Výborne, dobrá práca!"
-VERDICT_60_TO_80,"Yeah, it's quite good!","Celkom dobré!"
-VERDICT_40_TO_60,"Not too bad.","Nie je to zlé."
-VERDICT_20_TO_40,"Come on, you can do better!","No tak! Vieš to urobiť lepšie."
-VERDICT_0_TO_20,"What is this?! Do you want to move these rocks by hand?","Čo to má znamenať?! Chceš tie skaly posúvať ručne?"
+id,en
+USED,Used
+PRECISION,Precision
+FINISH,Finish
+RESUME,Resume
+RESTART,Restart
+SOUNDS_ENABLED,Sounds enabled
+MAIN_MENU,Main menu
+PLAY,Play
+LEVEL_SELECT,Level select
+HELP,Help
+EXIT,Exit
+CREDITS,Credits
+LEVEL,Level
+RETRY,Retry
+NEXT_LEVEL,Next level
+CHANGE_LEVEL,Change level
+PHARAOH_REVIEWS,Pharaoh reviews...
+BLOCKS_USED,Blocks used
+VERDICT_GOOD_FIRST_LEVEL,"Good job, now onto something bigger!"
+VERDICT_BAD_FIRST_LEVEL,"Come on, you can do better!"
+VERDICT_95_TO_100,"Great, this is exacly what I wanted!"
+VERDICT_80_TO_95,"Nice, great job!"
+VERDICT_60_TO_80,"Yeah, it's quite good!"
+VERDICT_40_TO_60,"Not too bad."
+VERDICT_20_TO_40,"Come on, you can do better!"
+VERDICT_0_TO_20,"What is this?! Do you want to move these rocks by hand?"
+GRAPHICS,Graphics
+PROGRAMMING,Programming
+CREDITS_SOUNDS,"Sounds were kindly stolen from"
+CREDITS_LUDUM_DARE,"Originally created for the [color=#c09d52]Ludum Dare #36[/color] competition."
+THE_STORY,"The Story"
+BLOCKS,"Blocks"
+STORY_0,"You are the chosen one."
+STORY_1,"The mighty pharaoh has decided to build the biggest monuments the world has ever seen, and you will help him. You will become a huge part of history - using one of the best innovations in Egyptian technology, [color=#c09d52]a giant slingshot[/color]!"
+STORY_2,"Pharaoh has generously agreed to outline the shape he's going after using his personal holographic device - you need to match it as closely as possible."
+STORY_3,"If you don't, chances are the pharaoh will be angry... and trust me, you don't want him to be angry! Don't worry though, it could be worse. After all, you're not a part of the group which will carve details into the stone manually... yet."
+BLOCK_0,"This block of stone is quite heavy, both mass and friction-wise. It doesn't slide too much and can be used to push other blocks a great deal."
+BLOCK_1,"The sandstone is lighter and more slippery than stone. You need to be a bit more careful when using it. It can be used to push other blocks more gently."
+BLOCK_2,"The destroyer! It will crush other blocks, given enough power on impact. Also, it will self-destruct after it has landed."
