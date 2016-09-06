@@ -21,19 +21,11 @@ const GAME_MODE_SELECT = 2
 const DESTROYER_LETHAL_VELOCITY = 150.0
 const DESTROYER_LETHAL_VELOCITY_SQUARED = DESTROYER_LETHAL_VELOCITY * DESTROYER_LETHAL_VELOCITY
 
-var template_to_load
-var shape_precision
-var blocks_used
-var max_blocks_used
-var game_mode
-
 func _ready():
 	randomize()
 
 func start_game(level, mode):
-	template_to_load = level
-	game_mode = mode
-	scene_switcher.switch_scene(load("res://game/ingame/ingame.tscn"))
+	scene_switcher.switch_scene(load("res://game/ingame/ingame.tscn"), {"template_id": level, "game_mode": mode})
 
 func get_box_type_color(type):
 	if type == BOX_TYPE_GRAY:

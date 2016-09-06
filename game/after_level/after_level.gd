@@ -1,18 +1,26 @@
 extends Control
 
+var template_id
+var precision
+var game_mode
+
 func _ready():
+	template_id = scene_switcher.get_arg("template_id")
+	precision = scene_switcher.get_arg("precision")
+	game_mode = scene_switcher.get_arg("game_mode")
+
 	var stats = get_node("stats")
-	stats.set_shape_precision(global.shape_precision)
-	stats.set_blocks_used(global.blocks_used, global.max_blocks_used)
+	stats.set_precision(precision)
+	stats.set_blocks_used(scene_switcher.get_arg("blocks_used"), scene_switcher.get_arg("max_blocks_used"))
 	stats.generate_verdict()
 
 func _on_retry_pressed():
 	sample_player.play("button")
-	global.start_game(global.template_to_load, global.game_mode)
+	global.start_game(template_id, game_mode)
 
 func _on_next_level_pressed():
 	sample_player.play("button")
-	global.start_game(global.template_to_load + 1, global.GAME_MODE_NORMAL)
+	global.start_game(template_id + 1, global.GAME_MODE_NORMAL)
 
 func _on_change_level_pressed():
 	sample_player.play("button")

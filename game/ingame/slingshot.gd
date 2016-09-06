@@ -12,7 +12,7 @@ var dragging = false
 
 var stats
 var holder
-var current_box
+var current_block
 var wood
 var front_string
 var back_string
@@ -20,7 +20,7 @@ var back_string
 var current_box_type = global.BOX_TYPE_SAND
 
 func launch(dir, amount):
-	current_box.launch(dir, amount)
+	current_block.launch(dir, amount)
 	stats.increment_used()
 	holder.set_pos(Vector2(0.0, 0.0))
 	set_launched(true)
@@ -40,16 +40,16 @@ func _ready():
 func respawn_box():
 	if !is_processing_input():
 		return # there's no way back!
-	if current_box != null:
-		current_box.queue_free()
+	if current_block != null:
+		current_block.queue_free()
 	if stats.used >= stats.max_used:
 		return
 
-	current_box = box_scene.instance()
-	current_box.connect("on_landed", self, "on_block_landed")
-	current_box.set_type(current_box_type)
-	get_node("..").call_deferred("add_child", current_box)
-	current_box.set_pos(holder.get_global_pos())
+	current_block = box_scene.instance()
+	current_block.connect("on_landed", self, "on_block_landed")
+	current_block.set_type(current_box_type)
+	get_node("..").call_deferred("add_child", current_block)
+	current_block.set_pos(holder.get_global_pos())
 
 func _draw():
 	var pos = get_pos()
@@ -65,13 +65,13 @@ func _draw():
 	draw_line((back_string.get_global_pos() - pos) / scale, target, global.COLOR_GRAY, 2.0)
 
 func on_block_landed(block):
-	assert(block == current_box)
+	assert(block == current_block)
 
 	set_launched(false)
 
 	if block.type == global.BOX_TYPE_DESTROYER:
 		block.destroy()
-	current_box = null
+	current_block = null
 	if stats.used >= stats.max_used:
 		on_all_blocks_used()
 	else:
@@ -92,10 +92,10 @@ func _input(event):
 			length = MAX_LENGTH
 		pos += diff
 		holder.set_global_pos(pos)
-		current_box.set_pos(pos)
+		current_block.set_pos(pos)
 		update()
 	elif event.type == InputEvent.MOUSE_BUTTON:
-		if event.button_index != BUTTON_LEFT || current_box == null:
+		if event.button_index != BUTTON_LEFT || current_block == null:
 			return
 
 		if event.is_pressed():
@@ -108,6 +108,6 @@ func _input(event):
 				length = MAX_LENGTH
 			var dir = -diff.normalized()
 
-			launch(dir, MAX_SPEED * (length / MAX_LENGTH) * current_box.get_weight())
+			launch(dir, MAX_SPEED * (length / MAX_LENGTH) * current_block.get_weight())
 			update()
 

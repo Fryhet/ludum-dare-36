@@ -4,7 +4,7 @@ var precision
 var blocks
 var max_blocks
 
-func set_shape_precision(precision):
+func set_precision(precision):
 	self.precision = precision
 	get_node("panel/container/precision").set_text(str(tr("PRECISION"), ": ", "%.2f%%" % (precision * 100.0)))
 
@@ -17,7 +17,7 @@ func generate_verdict():
 	get_node("panel/verdict").set_text(str('"', tr(precision_verdict(precision)), '"'))
 
 func precision_verdict(score):
-	if global.template_to_load == 0:
+	if get_node("..").template_id == 0:
 		if score > 0.40:
 			return "VERDICT_GOOD_FIRST_LEVEL"
 		return "VERDICT_BAD_FIRST_LEVEL"
