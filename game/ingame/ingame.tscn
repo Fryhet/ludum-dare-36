@@ -240,6 +240,8 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
 
+[connection signal="all_blocks_used" from="slingshot" to="." method="_on_all_blocks_used"]
+
 [connection signal="pressed" from="finished" to="." method="_on_finished_pressed"]
 
 

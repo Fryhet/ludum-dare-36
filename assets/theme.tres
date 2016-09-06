@@ -151,10 +151,10 @@ draw_center = true
 [resource]
 
 default_font = ExtResource( 2 )
-Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+Button/colors/font_color = Color( 1, 1, 1, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
-Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/colors/font_color_pressed = Color( 0.87451, 0.87451, 0.87451, 1 )
 Button/constants/hseparation = 2
 Button/fonts/font = null
 Button/styles/disabled = SubResource( 1 )

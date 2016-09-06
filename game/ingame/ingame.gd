@@ -45,3 +45,6 @@ func _on_finished_pressed():
 			scene_switcher.switch_scene(load("res://game/after_level/after_level_normal.tscn"), args)
 	elif game_mode == global.GAME_MODE_SELECT:
 		scene_switcher.switch_scene(load("res://game/after_level/after_level_select.tscn"), args)
+
+func _on_all_blocks_used():
+	get_node("restart").show()

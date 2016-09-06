@@ -19,6 +19,8 @@ var back_string
 
 var current_box_type = global.BOX_TYPE_SAND
 
+signal all_blocks_used
+
 func launch(dir, amount):
 	current_block.launch(dir, amount)
 	stats.increment_used()
@@ -73,12 +75,9 @@ func on_block_landed(block):
 		block.destroy()
 	current_block = null
 	if stats.used >= stats.max_used:
-		on_all_blocks_used()
+		emit_signal("all_blocks_used")
 	else:
 		respawn_box()
-
-func on_all_blocks_used():
-	get_node("../restart").show()
 
 func _input(event):
 	if event.type == InputEvent.MOUSE_MOTION:
