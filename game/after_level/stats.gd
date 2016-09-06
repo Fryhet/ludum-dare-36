@@ -18,7 +18,7 @@ func generate_verdict():
 
 func precision_verdict(score):
 	if global.template_to_load == 0:
-		if score > 0.50:
+		if score > 0.40:
 			return "VERDICT_GOOD_FIRST_LEVEL"
 		return "VERDICT_BAD_FIRST_LEVEL"
 	
@@ -33,6 +33,3 @@ func precision_verdict(score):
 	if score > 0.20:
 		return "VERDICT_20_TO_40"
 	return "VERDICT_0_TO_20"
-
-func scored_enough():
-	return precision > 0.40

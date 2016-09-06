@@ -8,12 +8,14 @@ var precision = 0.0
 var used = 0
 var max_used
 
-var precision_label
 var used_label
+var precision_label
+var success_icon
 
 func _ready():
-	precision_label = get_node("precision")
 	used_label = get_node("used")
+	precision_label = get_node("precision")
+	success_icon = get_node("success_icon")
 
 func set_max_used(value):
 	max_used = value
@@ -32,6 +34,8 @@ func refresh_text():
 	else:
 		used_label.set("custom_colors/font_color", good_color)
 	used_label.set_text(str(tr("USED"), ": ", used, "/", max_used))
+
+	success_icon.refresh(precision)
 
 	precision_label.set("custom_colors/font_color", color_ramp.interpolate(precision))
 	precision_label.set_text(str(tr("PRECISION"), ": %.2f%%") % (precision * 100.0))

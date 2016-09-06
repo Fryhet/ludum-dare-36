@@ -52,3 +52,6 @@ func get_particles_color(type):
 	if type == BOX_TYPE_DESTROYER:
 		return PARTICLES_COLOR_DESTROYER
 	assert(0)
+
+func scored_enough(precision):
+	return precision > 0.40

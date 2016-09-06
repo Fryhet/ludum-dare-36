@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://game/ingame/ingame.gd" type="Script" id=1]
 [ext_resource path="res://game/ingame/slingshot.tscn" type="PackedScene" id=2]
@@ -6,22 +6,24 @@
 [ext_resource path="res://game/block/block_preview.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/theme.tres" type="Theme" id=5]
 [ext_resource path="res://game/ingame/stats.gd" type="Script" id=6]
-[ext_resource path="res://game/ingame/pause_menu.tscn" type="PackedScene" id=7]
-[ext_resource path="res://game/ingame/restart_button.gd" type="Script" id=8]
+[ext_resource path="res://assets/good_icon.tres" type="Texture" id=7]
+[ext_resource path="res://game/ingame/success_icon.gd" type="Script" id=8]
+[ext_resource path="res://assets/bad_icon.tres" type="Texture" id=9]
+[ext_resource path="res://game/ingame/pause_menu.tscn" type="PackedScene" id=10]
+[ext_resource path="res://game/ingame/restart_button.gd" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 50, 4000 )
 
-[sub_resource type="ColorRamp" id=3]
+[sub_resource type="ColorRamp" id=2]
 
 offsets = FloatArray( 0, 1 )
 colors = ColorArray( 0.917647, 0.282353, 0.282353, 1, 0.319221, 0.746094, 0.244812, 1 )
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource/name = "restart_button_appear"
 length = 1.0
 loop = false
 step = 0.1
@@ -115,12 +117,12 @@ size_flags/vertical = 2
 theme/theme = ExtResource( 5 )
 margin/left = 400.0
 margin/top = -120.0
-margin/right = 400.0
+margin/right = 330.0
 margin/bottom = 100.0
 script/script = ExtResource( 6 )
 bad_color = Color( 0.917969, 0.283279, 0.283279, 1 )
 good_color = Color( 1, 1, 1, 1 )
-color_ramp = SubResource( 3 )
+color_ramp = SubResource( 2 )
 
 [node name="used" type="Label" parent="stats"]
 
@@ -148,9 +150,9 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 210.0
+margin/left = 250.0
 margin/top = 100.0
-margin/right = 410.0
+margin/right = 450.0
 margin/bottom = 0.0
 text = "Precision:"
 valign = 1
@@ -158,7 +160,30 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="pause_menu" parent="." instance=ExtResource( 7 )]
+[node name="success_icon" type="TextureFrame" parent="stats"]
+
+anchor/left = 1
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 200.0
+margin/top = 20.0
+margin/right = 160.0
+margin/bottom = -20.0
+texture = ExtResource( 7 )
+modulate = Color( 0.415344, 1, 0.273438, 1 )
+expand = true
+script/script = ExtResource( 8 )
+bad_texture = ExtResource( 9 )
+bad_color = Color( 0.917647, 0.282353, 0.282353, 1 )
+good_texture = ExtResource( 7 )
+good_color = Color( 0.411765, 1, 0.270588, 1 )
+
+[node name="pause_menu" parent="." instance=ExtResource( 10 )]
 
 [node name="finished" type="Button" parent="."]
 
@@ -201,14 +226,14 @@ enabled_focus_mode = 2
 shortcut = null
 text = "Restart"
 flat = false
-script/script = ExtResource( 8 )
+script/script = ExtResource( 11 )
 
 [node name="animation" type="AnimationPlayer" parent="restart"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/restart_button_appear = SubResource( 2 )
+anims/restart_button_appear = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
