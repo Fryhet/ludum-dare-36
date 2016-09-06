@@ -3,6 +3,10 @@ extends RigidBody2D
 export(int, "None", "Gray", "Sand", "Destroyer") var type
 var sprite
 
+var time_launched = 0.0
+
+signal on_landed(block)
+
 func _ready():
 	sprite = get_node("sprite")
 	set_type(type)
@@ -33,6 +37,13 @@ func launch(dir, speed):
 	apply_impulse(Vector2(0, 0), dir * speed)
 	set_layer_mask_bit(0, true)
 	set_collision_mask_bit(0, true)
+	set_process(true)
+
+func _process(delta):
+	time_launched += delta
+	if time_launched > 1.0 && is_sleeping():
+		emit_signal("on_landed", self)
+		set_process(false)
 
 var velocity_before
 var block_colliding = false
@@ -68,10 +79,6 @@ func _integrate_forces(state):
 			ground_colliding = true
 			get_node("sounds/sand_collide").play("sand_collide")
 	velocity_before = velocity
-
-func on_landed():
-	if type == global.BOX_TYPE_DESTROYER:
-		destroy()
 
 func destroy():
 	var explosion = preload("res://game/block/explosion.tscn").instance()

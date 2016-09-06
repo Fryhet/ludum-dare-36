@@ -1,6 +1,7 @@
 extends Sprite
 
 func reload_texture(type):
+	set_rotd(90 * (randi() % 4))
 	if type == global.BOX_TYPE_DESTROYER:
 		set_texture(preload("res://assets/destroyer.png"))
 		set_region(false)

@@ -177,6 +177,7 @@ margin/bottom = -20.0
 texture = ExtResource( 7 )
 modulate = Color( 0.415344, 1, 0.273438, 1 )
 expand = true
+stretch_mode = 0
 script/script = ExtResource( 8 )
 bad_texture = ExtResource( 9 )
 bad_color = Color( 0.917647, 0.282353, 0.282353, 1 )

@@ -9,7 +9,6 @@ const MAX_LENGTH = 200.0
 const MAX_LENGTH_SQUARED = MAX_LENGTH * MAX_LENGTH
 
 var dragging = false
-var time_launched = 0.0
 
 var stats
 var holder
@@ -20,15 +19,15 @@ var back_string
 
 var current_box_type = global.BOX_TYPE_SAND
 
-func is_launched():
-	return is_processing()
+func launch(dir, amount):
+	current_box.launch(dir, amount)
+	stats.increment_used()
+	holder.set_pos(Vector2(0.0, 0.0))
+	set_launched(true)
 
 func set_launched(launched):
-	if launched:
-		stats.increment_used()
 	get_node("../finished").set_disabled(launched)
 	set_process_input(!launched)
-	set_process(launched)
 
 func _ready():
 	stats = get_node("../stats")
@@ -39,19 +38,18 @@ func _ready():
 	set_process_input(true)
 
 func respawn_box():
-	if is_launched():
+	if !is_processing_input():
 		return # there's no way back!
 	if current_box != null:
 		current_box.queue_free()
 	if stats.used >= stats.max_used:
 		return
 
-	time_launched = 0.0
 	current_box = box_scene.instance()
+	current_box.connect("on_landed", self, "on_block_landed")
 	current_box.set_type(current_box_type)
 	get_node("..").call_deferred("add_child", current_box)
 	current_box.set_pos(holder.get_global_pos())
-	current_box.set_rotd(90 * (randi() % 4))
 
 func _draw():
 	var pos = get_pos()
@@ -66,14 +64,13 @@ func _draw():
 	draw_line((front_string.get_global_pos() - pos) / scale, target, global.COLOR_GRAY, 2.0)
 	draw_line((back_string.get_global_pos() - pos) / scale, target, global.COLOR_GRAY, 2.0)
 
-func _process(delta):
-	time_launched += delta
-	if time_launched > 1.0 && current_box.is_sleeping():
-		set_launched(false)
-		on_box_landed()
+func on_block_landed(block):
+	assert(block == current_box)
 
-func on_box_landed():
-	current_box.on_landed()
+	set_launched(false)
+
+	if block.type == global.BOX_TYPE_DESTROYER:
+		block.destroy()
 	current_box = null
 	if stats.used >= stats.max_used:
 		on_all_blocks_used()
@@ -111,8 +108,6 @@ func _input(event):
 				length = MAX_LENGTH
 			var dir = -diff.normalized()
 
-			current_box.launch(dir, MAX_SPEED * (length / MAX_LENGTH) * current_box.get_weight())
-			holder.set_pos(Vector2(0.0, 0.0))
-			set_launched(true)
+			launch(dir, MAX_SPEED * (length / MAX_LENGTH) * current_box.get_weight())
 			update()
 
