@@ -54,7 +54,7 @@ func respawn_box():
 	current_block = box_scene.instance()
 	current_block.connect("on_landed", self, "on_block_landed")
 	current_block.set_type(current_box_type)
-	get_node("..").call_deferred("add_child", current_block)
+	get_node("../blocks").add_child(current_block)
 	current_block.set_pos(holder.get_global_pos())
 
 func _draw():

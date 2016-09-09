@@ -107,6 +107,8 @@ visibility/opacity = 1.0
 transform/pos = Vector2( 322.364, 71.5663 )
 type = 3
 
+[node name="blocks" type="Node2D" parent="."]
+
 [node name="stats" type="Panel" parent="."]
 
 anchor/right = 1
