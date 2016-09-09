@@ -32,9 +32,9 @@ func set_type(typ):
 func get_texture():
 	return sprite.get_texture()
 
-func launch(dir, speed):
+func launch(impulse):
 	set_mode(MODE_RIGID)
-	apply_impulse(Vector2(0, 0), dir * speed)
+	apply_impulse(Vector2(0, 0), impulse)
 	set_layer_mask_bit(0, true)
 	set_collision_mask_bit(0, true)
 	set_process(true)

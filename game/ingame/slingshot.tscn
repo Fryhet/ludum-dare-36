@@ -10,6 +10,8 @@ transform/pos = Vector2( 225.783, 419.955 )
 transform/scale = Vector2( 2.34771, 2.34771 )
 script/script = ExtResource( 1 )
 box_scene = ExtResource( 2 )
+weak_color = Color( 0.917647, 0.282353, 0.282353, 0.497268 )
+strong_color = Color( 0.411765, 1, 0.270588, 0.650273 )
 
 [node name="wood" type="Node2D" parent="."]
 

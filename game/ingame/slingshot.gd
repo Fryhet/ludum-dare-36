@@ -1,12 +1,16 @@
 extends Node2D
 
 export(PackedScene) var box_scene
+export(Color) var weak_color
+export(Color) var strong_color
 
 const MAX_SPEED = 100.0
 const CLICK_RADIUS = 100.0
 const CLICK_RADIUS_SQUARED = CLICK_RADIUS * CLICK_RADIUS
 const MAX_LENGTH = 200.0
 const MAX_LENGTH_SQUARED = MAX_LENGTH * MAX_LENGTH
+const HINT_LENGTH = 500.0
+const HINT_LENGTH_SQUARED = HINT_LENGTH * HINT_LENGTH
 
 var dragging = false
 
@@ -21,8 +25,8 @@ var current_box_type = global.BOX_TYPE_SAND
 
 signal all_blocks_used
 
-func launch(dir, amount):
-	current_block.launch(dir, amount)
+func launch(impulse):
+	current_block.launch(impulse)
 	stats.increment_used()
 	holder.set_pos(Vector2(0.0, 0.0))
 	set_launched(true)
@@ -58,13 +62,38 @@ func _draw():
 	var scale = get_scale()
 	var target = holder.get_global_pos() - pos
 	var length = target.length()
+	var dir = -target / length
 	if length > MAX_LENGTH:
 		target = target / length * MAX_LENGTH
 		length = MAX_LENGTH
 
+	draw_trajectory(dir, length, scale)
+
 	target /= scale
 	draw_line((front_string.get_global_pos() - pos) / scale, target, global.COLOR_GRAY, 2.0)
 	draw_line((back_string.get_global_pos() - pos) / scale, target, global.COLOR_GRAY, 2.0)
+
+func draw_trajectory(dir, length, scale):
+	# FIXME: Oh my, this is so bad. It's not even too accurate, although it
+	# serves as a relatively good approximation.
+
+	var fraction = length / MAX_LENGTH
+	var color = weak_color.linear_interpolate(strong_color, fraction)
+	var impulse = dir * MAX_SPEED * fraction
+
+	var gravity = Vector2(0.0, 5.7) # FIXME: magic
+	var pos = get_node("holder").get_pos() * scale
+	var start_pos = pos
+	var step = 0.2
+	var t = 0.0
+
+	while (pos - start_pos).length_squared() < HINT_LENGTH_SQUARED:
+		impulse += gravity * step
+		var next_pos = pos + (impulse * step)
+		draw_line(pos / scale, next_pos / scale, color, 10.0)
+
+		pos = next_pos
+		t += step
 
 func on_block_landed(block):
 	assert(block == current_block)
@@ -107,6 +136,8 @@ func _input(event):
 				length = MAX_LENGTH
 			var dir = -diff.normalized()
 
-			launch(dir, MAX_SPEED * (length / MAX_LENGTH) * current_block.get_weight())
+			launch(dir * calculate_impulse_strength(length))
 			update()
 
+func calculate_impulse_strength(length):
+	return MAX_SPEED * (length / MAX_LENGTH) * current_block.get_weight()
