@@ -5,9 +5,16 @@ func _ready():
 	set_menu_visible(false)
 	set_process_input(true)
 
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		on_menu_requested()
+
 func _input(event):
 	if event.type == InputEvent.KEY && event.is_action("ui_cancel") && !event.is_pressed():
-		set_menu_visible(!is_visible())
+		on_menu_requested()
+
+func on_menu_requested():
+	set_menu_visible(!is_visible())
 
 func set_menu_visible(visible):
 	set_hidden(!visible)

@@ -1,18 +1,23 @@
 extends Control
 
 func _ready():
+	get_tree().set_auto_accept_quit(true)
 	get_node("sounds").set_pressed(AudioServer.get_fx_global_volume_scale() > 0.5)
 
-func _on_play_pressed():
+func on_button_pressed():
 	sample_player.play("button")
+	get_tree().set_auto_accept_quit(false)
+
+func _on_play_pressed():
+	on_button_pressed()
 	global.start_game(0, global.GAME_MODE_NORMAL)
 
 func _on_level_select_pressed():
-	sample_player.play("button")
+	on_button_pressed()
 	scene_switcher.switch_scene(load("res://game/level_select/level_select.tscn"))
 
 func _on_help_pressed():
-	sample_player.play("button")
+	on_button_pressed()
 	scene_switcher.switch_scene(load("res://game/help/help.tscn"))
 
 func _on_sounds_toggled(pressed):
@@ -22,7 +27,7 @@ func _on_sounds_toggled(pressed):
 		AudioServer.set_fx_global_volume_scale(0.0)
 
 func _on_credits_pressed():
-	sample_player.play("button")
+	on_button_pressed()
 	scene_switcher.switch_scene(load("res://game/credits/credits.tscn"))
 
 func _on_exit_pressed():
