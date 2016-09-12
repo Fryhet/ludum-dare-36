@@ -47,3 +47,7 @@ func get_particles_color(type):
 
 func scored_enough(precision):
 	return precision > 0.40
+
+func is_mobile_build():
+	var os_name = OS.get_name()
+	return os_name == "Android" || os_name == "iOS"

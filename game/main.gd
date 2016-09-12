@@ -6,7 +6,8 @@ func _ready():
 
 func on_button_pressed():
 	sample_player.play("button")
-	get_tree().set_auto_accept_quit(false)
+	if global.is_mobile_build():
+		get_tree().set_auto_accept_quit(false)
 
 func _on_play_pressed():
 	on_button_pressed()

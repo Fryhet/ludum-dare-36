@@ -7,7 +7,8 @@ func _ready():
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		on_menu_requested()
+		if global.is_mobile_build():
+			on_menu_requested()
 
 func _input(event):
 	if event.type == InputEvent.KEY && event.is_action("ui_cancel") && !event.is_pressed():
