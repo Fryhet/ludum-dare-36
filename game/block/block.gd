@@ -3,6 +3,7 @@ extends RigidBody2D
 export(int, "None", "Gray", "Sand", "Destroyer") var type
 var sprite
 var outline
+var points = 0.0
 
 var time_launched = 0.0
 
@@ -12,7 +13,7 @@ func _ready():
 	sprite = get_node("sprite")
 	outline = sprite.get_node("outline")
 	set_type(type)
-	set_points(0.0)
+	reset_points()
 	set_contact_monitor(true)
 	set_max_contacts_reported(3)
 
@@ -30,8 +31,12 @@ func set_type(typ):
 
 	sprite.reload_texture(type)
 
-func set_points(points):
-	outline.set_modulate(global.OUTLINE_BAD_COLOR.linear_interpolate(global.OUTLINE_GOOD_COLOR, points))
+func reset_points():
+	points = 0.0
+
+func add_points(points):
+	self.points += points
+	outline.set_modulate(global.OUTLINE_BAD_COLOR.linear_interpolate(global.OUTLINE_GOOD_COLOR, self.points))
 
 func get_texture():
 	return sprite.get_texture()

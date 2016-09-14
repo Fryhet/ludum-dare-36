@@ -23,9 +23,11 @@ var back_string
 
 var current_box_type = global.BOX_TYPE_SAND
 
+signal launched(block)
 signal all_blocks_used
 
 func launch(impulse):
+	emit_signal("launched", current_block)
 	current_block.launch(impulse)
 	stats.increment_used()
 	holder.set_pos(Vector2(0.0, 0.0))

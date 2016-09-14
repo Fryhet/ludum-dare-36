@@ -6,6 +6,8 @@ var stats
 var template_id
 var game_mode
 
+var blocks = []
+
 func _ready():
 	template_id = scene_switcher.get_arg("template_id")
 	game_mode = scene_switcher.get_arg("game_mode")
@@ -26,6 +28,8 @@ func _ready():
 	set_fixed_process(true)
 
 func _fixed_process(delta):
+	for block in blocks:
+		block.reset_points()
 	stats.set_precision(template.check_shape_precision())
 
 func _on_finished_pressed():
@@ -45,6 +49,9 @@ func _on_finished_pressed():
 			scene_switcher.switch_scene(load("res://game/after_level/after_level_normal.tscn"), args)
 	elif game_mode == global.GAME_MODE_SELECT:
 		scene_switcher.switch_scene(load("res://game/after_level/after_level_select.tscn"), args)
+
+func _on_block_launched(block):
+	blocks.append(block)
 
 func _on_all_blocks_used():
 	get_node("restart").show()

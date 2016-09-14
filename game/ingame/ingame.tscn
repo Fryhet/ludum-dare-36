@@ -244,6 +244,8 @@ autoplay = ""
 
 [connection signal="all_blocks_used" from="slingshot" to="." method="_on_all_blocks_used"]
 
+[connection signal="launched" from="slingshot" to="." method="_on_block_launched"]
+
 [connection signal="pressed" from="finished" to="." method="_on_finished_pressed"]
 
 
