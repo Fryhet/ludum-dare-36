@@ -37,7 +37,6 @@ tabs_visible = true
 
 [node name="the_story" type="Container" parent="tab_container"]
 
-visibility/visible = false
 anchor/right = 1
 anchor/bottom = 1
 focus/ignore_mouse = false
@@ -68,6 +67,7 @@ visible_characters = -1
 
 [node name="blocks" type="GridContainer" parent="tab_container"]
 
+visibility/visible = false
 anchor/right = 1
 anchor/bottom = 1
 focus/ignore_mouse = false

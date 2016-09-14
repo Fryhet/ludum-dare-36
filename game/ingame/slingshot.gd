@@ -33,7 +33,7 @@ func launch(impulse):
 
 func set_launched(launched):
 	get_node("../finished").set_disabled(launched)
-	set_process_input(!launched)
+	set_process_unhandled_input(!launched)
 
 func _ready():
 	stats = get_node("../stats")
@@ -41,10 +41,10 @@ func _ready():
 	wood = get_node("wood")
 	front_string = get_node("wood/front/string")
 	back_string = get_node("wood/back/string")
-	set_process_input(true)
+	set_process_unhandled_input(true)
 
 func respawn_box():
-	if !is_processing_input():
+	if !is_processing_unhandled_input():
 		return # there's no way back!
 	if current_block != null:
 		current_block.queue_free()
@@ -108,7 +108,7 @@ func on_block_landed(block):
 	else:
 		respawn_box()
 
-func _input(event):
+func _unhandled_input(event):
 	if event.type == InputEvent.MOUSE_MOTION:
 		if !dragging:
 			return

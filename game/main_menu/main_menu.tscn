@@ -97,6 +97,27 @@ shortcut = null
 text = "CREDITS"
 flat = false
 
+[node name="fullscreen" type="CheckBox" parent="."]
+
+anchor/left = 1
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 310.0
+margin/top = 120.0
+margin/right = 15.0
+margin/bottom = 81.0
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "FULLSCREEN"
+flat = false
+align = 0
+
 [node name="sounds" type="CheckBox" parent="."]
 
 anchor/left = 1
@@ -161,6 +182,8 @@ stretch_mode = 6
 [connection signal="pressed" from="help" to="." method="_on_help_pressed"]
 
 [connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]
+
+[connection signal="toggled" from="fullscreen" to="." method="_on_fullscreen_toggled"]
 
 [connection signal="toggled" from="sounds" to="." method="_on_sounds_toggled"]
 
