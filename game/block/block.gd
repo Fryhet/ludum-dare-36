@@ -2,6 +2,7 @@ extends RigidBody2D
 
 export(int, "None", "Gray", "Sand", "Destroyer") var type
 var sprite
+var outline
 
 var time_launched = 0.0
 
@@ -9,13 +10,13 @@ signal on_landed(block)
 
 func _ready():
 	sprite = get_node("sprite")
+	outline = sprite.get_node("outline")
 	set_type(type)
+	set_points(0.0)
 	set_contact_monitor(true)
 	set_max_contacts_reported(3)
 
 func set_type(typ):
-	if sprite == null:
-		sprite = get_node("sprite")
 	type = typ
 	sprite.set_modulate(global.get_box_type_color(typ))
 
@@ -28,6 +29,9 @@ func set_type(typ):
 		set_weight(10.0)
 
 	sprite.reload_texture(type)
+
+func set_points(points):
+	outline.set_modulate(global.OUTLINE_BAD_COLOR.linear_interpolate(global.OUTLINE_GOOD_COLOR, points))
 
 func get_texture():
 	return sprite.get_texture()
@@ -50,6 +54,8 @@ var block_colliding = false
 var ground_colliding = false
 
 func _integrate_forces(state):
+	# FIXME: this function stinks
+
 	var contact_count = state.get_contact_count()
 	if contact_count == 0:
 		block_colliding = false

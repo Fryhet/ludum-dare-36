@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://game/block/block.gd" type="Script" id=1]
 [ext_resource path="res://assets/block.png" type="Texture" id=2]
 [ext_resource path="res://game/block/sprite.gd" type="Script" id=3]
-[ext_resource path="res://assets/sounds.tres" type="SampleLibrary" id=4]
+[ext_resource path="res://assets/block_outline.png" type="Texture" id=4]
+[ext_resource path="res://assets/sounds.tres" type="SampleLibrary" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -38,12 +39,18 @@ type = 2
 
 [node name="sprite" type="Sprite" parent="."]
 
-transform/pos = Vector2( -0.0639243, -0.0639281 )
 transform/scale = Vector2( 1.97949, 1.97949 )
 texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 0, 0, 32, 32 )
 script/script = ExtResource( 3 )
+
+[node name="outline" type="Sprite" parent="sprite"]
+
+visibility/behind_parent = true
+transform/scale = Vector2( 1.05, 1.05 )
+texture = ExtResource( 4 )
+modulate = Color( 0, 0, 0, 0 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
 
@@ -61,7 +68,7 @@ params/attenuation/min_distance = 1.0
 params/attenuation/max_distance = 2048.0
 params/attenuation/distance_exp = 1.0
 config/polyphony = 1
-config/samples = ExtResource( 4 )
+config/samples = ExtResource( 5 )
 config/pitch_random = 0.0
 
 [node name="sand_collide" type="SamplePlayer2D" parent="sounds"]
@@ -72,7 +79,7 @@ params/attenuation/min_distance = 1.0
 params/attenuation/max_distance = 2048.0
 params/attenuation/distance_exp = 1.0
 config/polyphony = 1
-config/samples = ExtResource( 4 )
+config/samples = ExtResource( 5 )
 config/pitch_random = 0.0
 
 

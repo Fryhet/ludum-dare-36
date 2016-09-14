@@ -42,6 +42,9 @@ func get_points():
 			continue
 		# TODO: a more accurate calculation, this just takes distance into account
 		var dist = clamp((body.get_global_pos() - get_global_pos()).length() / shape.get_shape().get_extents().width / 2.0, 0.0, 1.0)
-		points += 1.0 - dist
+		var body_points = 1.0 - dist
+
+		body.set_points(body_points)
+		points += body_points
 	return points
 

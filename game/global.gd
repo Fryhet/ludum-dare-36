@@ -4,6 +4,9 @@ const COLOR_GRAY = Color(0.5, 0.5, 0.5, 1.0)
 const COLOR_SAND = Color("fad689")
 const COLOR_DESTROYER = Color(1.0, 1.0, 1.0, 1.0)
 
+const OUTLINE_BAD_COLOR = Color(0.0, 0.0, 0.0, 0.0)
+const OUTLINE_GOOD_COLOR = Color("69ff44")
+
 const PARTICLES_COLOR_GRAY = COLOR_GRAY
 const PARTICLES_COLOR_SAND = COLOR_SAND
 const PARTICLES_COLOR_DESTROYER = Color(0.3, 0.3, 0.3, 1.0)
